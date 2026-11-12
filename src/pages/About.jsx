@@ -102,73 +102,72 @@ export default function About({ onOpenEnquire }) {
         </div>
       </section>
 
-      {/* 3. MEET THE FOUNDER SECTION */}
-      <section className="py-14 bg-[#FCFAF6] border-y border-[#E3D1BC]">
+      {/* 3. MEET THE FOUNDER SECTION - EXACT 1:1 CLONE OF USER UPLOAD */}
+      <section className="py-12 sm:py-16 bg-[#FEF5EE] border-y border-[#E3D1BC]/80">
         <div className="w-full px-4 sm:px-8 md:px-12 lg:px-[5.5%]">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          {/* Desktop & Tablet (>= 768px): Exact Master 2x Graphic Banner */}
+          <div className="hidden md:block w-full max-w-[1240px] mx-auto rounded-3xl overflow-hidden shadow-sm border border-[#E8DACB] select-none bg-white">
+            <picture>
+              <source srcSet="/images/founder-mission-vision-banner-2x.jpg" media="(min-width: 640px)" />
+              <img
+                src="/images/founder-mission-vision-banner.jpg"
+                alt="Meet the Founder - Deepak Kumar, Founder, Aadhya International. Our Mission & Our Vision"
+                className="w-full h-auto object-contain block"
+              />
+            </picture>
+          </div>
+
+          {/* Mobile Layout (< 768px): Exact same assets stacked cleanly & legibly */}
+          <div className="md:hidden space-y-6">
             
-            {/* Founder Photo */}
-            <div className="lg:col-span-4 flex justify-center">
-              <div className="relative group">
-                <div className="w-64 h-64 sm:w-72 sm:h-72 rounded-full overflow-hidden border-4 border-[#E3D1BC] shadow-xl bg-[#F7F1E7]">
-                  <img
-                    src="/images/founder-deepak-kumar.png"
-                    alt="Deepak Kumar - Founder of Aadhya International"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-[#2B150D] text-white px-4 py-1 rounded-full text-[11px] font-semibold border border-[#E69138]/50 shadow whitespace-nowrap">
-                  20+ Years Confectionery Mastery
-                </div>
+            {/* Founder Card */}
+            <div className="bg-[#FAF6F0] rounded-3xl p-5 border border-[#E8DACB] shadow-sm space-y-4">
+              <div className="w-full max-w-[260px] mx-auto rounded-2xl overflow-hidden">
+                <img
+                  src="/images/founder-portrait-2x.png"
+                  alt="Deepak Kumar - Founder"
+                  className="w-full h-auto object-contain block mx-auto"
+                />
+              </div>
+
+              <div className="text-center space-y-1">
+                <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#984A1A]">
+                  MEET THE FOUNDER
+                </span>
+                <h3 className="font-serif text-2xl font-bold text-[#200D07]">
+                  Deepak Kumar
+                </h3>
+                <p className="text-xs font-semibold text-[#8C3D10]">
+                  Founder, Aadhya International
+                </p>
+                <p className="text-xs text-[#55271A] leading-relaxed pt-2 text-left">
+                  A confectionery industry expert with 20+ years of hands-on experience in chocolate panning, product development and production consultancy. He has trained hundreds of professionals and helped many businesses set up successful panned chocolate operations.
+                </p>
               </div>
             </div>
 
-            {/* Founder Bio & Mission/Vision */}
-            <div className="lg:col-span-8 space-y-6">
-              <div>
-                <span className="text-xs font-bold uppercase tracking-widest text-[#B86216]">
-                  MEET THE FOUNDER
-                </span>
-                <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#2B150D] mt-0.5">
-                  Deepak Kumar
-                </h3>
-                <p className="text-xs font-semibold text-[#8c3d10] uppercase tracking-wide">
-                  Founder, Aadhya International
-                </p>
-
-                <p className="text-xs sm:text-sm text-[#55271A] leading-relaxed mt-3">
-                  A confectionery industry expert with 20+ years of hands-on experience in chocolate panning, product development and production consultancy. He has trained hundreds of professionals and helped many businesses set up successful panned chocolate operations across India and internationally.
-                </p>
+            {/* Mission & Vision Cards (Exact 2x Master Slices) */}
+            <div className="space-y-3">
+              <div className="rounded-2xl overflow-hidden shadow-sm border border-[#E8DACB]">
+                <img
+                  src="/images/founder-mission-card-2x.png"
+                  alt="Our Mission - To empower individuals and businesses with practical knowledge, technical expertise and industry-relevant solutions in chocolate panning."
+                  className="w-full h-auto object-contain block"
+                />
               </div>
 
-              {/* Mission & Vision Cards */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                
-                <div className="bg-[#FAF6F0] p-4 rounded-xl border border-[#E3D1BC] space-y-1.5">
-                  <div className="flex items-center gap-2 text-[#D37B24]">
-                    <Target size={18} />
-                    <h5 className="font-serif text-sm font-bold text-[#2B150D]">Our Mission</h5>
-                  </div>
-                  <p className="text-xs text-[#623020] leading-relaxed">
-                    To empower individuals and businesses with practical knowledge, technical expertise and industry-relevant solutions in chocolate panning.
-                  </p>
-                </div>
-
-                <div className="bg-[#FAF6F0] p-4 rounded-xl border border-[#E3D1BC] space-y-1.5">
-                  <div className="flex items-center gap-2 text-[#D37B24]">
-                    <Eye size={18} />
-                    <h5 className="font-serif text-sm font-bold text-[#2B150D]">Our Vision</h5>
-                  </div>
-                  <p className="text-xs text-[#623020] leading-relaxed">
-                    To be a leading global center for chocolate panning training, innovation and business consultancy.
-                  </p>
-                </div>
-
+              <div className="rounded-2xl overflow-hidden shadow-sm border border-[#E8DACB]">
+                <img
+                  src="/images/founder-vision-card-2x.png"
+                  alt="Our Vision - To be a leading global center for chocolate panning training, innovation and business consultancy."
+                  className="w-full h-auto object-contain block"
+                />
               </div>
-
             </div>
 
           </div>
+
         </div>
       </section>
 
