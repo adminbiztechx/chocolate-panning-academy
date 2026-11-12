@@ -225,71 +225,82 @@ export default function About({ onOpenEnquire }) {
         </div>
       </section>
 
-      {/* 5. WHY CHOOSE US: OUR STRENGTHS */}
-      <section className="py-14 w-full px-4 sm:px-8 md:px-12 lg:px-[5.5%]">
-        <div className="text-center mb-10">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#B86216]">
-            WHY CHOOSE US
-          </span>
-          <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#2B150D] mt-1">
-            Our Strengths
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+      {/* 5. WHY CHOOSE US: OUR STRENGTHS - EXACT 1:1 CLONE OF USER UPLOAD */}
+      <section className="py-8 sm:py-12 bg-[#FAF6F0]">
+        <div className="w-full px-4 sm:px-8 md:px-12 lg:px-[5.5%]">
           
-          <div className="bg-[#F7F1E7] p-4 rounded-xl border border-[#E3D1BC] text-center flex flex-col items-center justify-center space-y-2">
-            <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#B86216] shadow-sm">
-              <Award size={18} />
-            </div>
-            <h5 className="font-serif text-xs font-bold text-[#2B150D]">
-              Hands-on <br /> Practical Training
-            </h5>
+          {/* Desktop & Tablet (>= 768px): Exact Master 2x Graphic Banner */}
+          <div className="hidden md:block w-full max-w-[1240px] mx-auto select-none">
+            <picture>
+              <source srcSet="/images/about-strengths-banner-2x.png" media="(min-width: 768px)" />
+              <img
+                src="/images/about-strengths-banner.png"
+                alt="Why Choose Us - Our Strengths: Hands-on Practical Training, Industry Proven Techniques, Production & Product Consultancy, Business Setup Support, Personalised Guidance, Certificate of Completion"
+                className="w-full h-auto object-contain block mx-auto"
+              />
+            </picture>
           </div>
 
-          <div className="bg-[#F7F1E7] p-4 rounded-xl border border-[#E3D1BC] text-center flex flex-col items-center justify-center space-y-2">
-            <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#B86216] shadow-sm">
-              <FlaskConical size={18} />
+          {/* Mobile Layout (< 768px): Centered Header + 2x3 Grid of 2x Sliced Cards */}
+          <div className="md:hidden space-y-5">
+            <div className="text-center space-y-1">
+              <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#9E3E1B]">
+                WHY CHOOSE US
+              </span>
+              <h2 className="font-serif text-2xl font-bold text-[#2A1209]">
+                Our Strengths
+              </h2>
             </div>
-            <h5 className="font-serif text-xs font-bold text-[#2B150D]">
-              Industry <br /> Proven Techniques
-            </h5>
-          </div>
 
-          <div className="bg-[#F7F1E7] p-4 rounded-xl border border-[#E3D1BC] text-center flex flex-col items-center justify-center space-y-2">
-            <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#B86216] shadow-sm">
-              <Settings size={18} />
-            </div>
-            <h5 className="font-serif text-xs font-bold text-[#2B150D]">
-              Production & <br /> Product Consultancy
-            </h5>
-          </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              <div className="rounded-2xl overflow-hidden shadow-sm border border-[#EBDCCF]/70 bg-[#FAF6F0] hover:shadow-md transition-shadow">
+                <img
+                  src="/images/strength-card-1-2x.png"
+                  alt="Hands-on Practical Training"
+                  className="w-full h-auto object-contain block"
+                />
+              </div>
 
-          <div className="bg-[#F7F1E7] p-4 rounded-xl border border-[#E3D1BC] text-center flex flex-col items-center justify-center space-y-2">
-            <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#B86216] shadow-sm">
-              <Factory size={18} />
-            </div>
-            <h5 className="font-serif text-xs font-bold text-[#2B150D]">
-              Business <br /> Setup Support
-            </h5>
-          </div>
+              <div className="rounded-2xl overflow-hidden shadow-sm border border-[#EBDCCF]/70 bg-[#FAF6F0] hover:shadow-md transition-shadow">
+                <img
+                  src="/images/strength-card-2-2x.png"
+                  alt="Industry Proven Techniques"
+                  className="w-full h-auto object-contain block"
+                />
+              </div>
 
-          <div className="bg-[#F7F1E7] p-4 rounded-xl border border-[#E3D1BC] text-center flex flex-col items-center justify-center space-y-2">
-            <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#B86216] shadow-sm">
-              <Users size={18} />
-            </div>
-            <h5 className="font-serif text-xs font-bold text-[#2B150D]">
-              Personalised <br /> Guidance
-            </h5>
-          </div>
+              <div className="rounded-2xl overflow-hidden shadow-sm border border-[#EBDCCF]/70 bg-[#FAF6F0] hover:shadow-md transition-shadow">
+                <img
+                  src="/images/strength-card-3-2x.png"
+                  alt="Production & Product Consultancy"
+                  className="w-full h-auto object-contain block"
+                />
+              </div>
 
-          <div className="bg-[#F7F1E7] p-4 rounded-xl border border-[#E3D1BC] text-center flex flex-col items-center justify-center space-y-2">
-            <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#B86216] shadow-sm">
-              <FileCheck size={18} />
+              <div className="rounded-2xl overflow-hidden shadow-sm border border-[#EBDCCF]/70 bg-[#FAF6F0] hover:shadow-md transition-shadow">
+                <img
+                  src="/images/strength-card-4-2x.png"
+                  alt="Business Setup Support"
+                  className="w-full h-auto object-contain block"
+                />
+              </div>
+
+              <div className="rounded-2xl overflow-hidden shadow-sm border border-[#EBDCCF]/70 bg-[#FAF6F0] hover:shadow-md transition-shadow">
+                <img
+                  src="/images/strength-card-5-2x.png"
+                  alt="Personalised Guidance"
+                  className="w-full h-auto object-contain block"
+                />
+              </div>
+
+              <div className="rounded-2xl overflow-hidden shadow-sm border border-[#EBDCCF]/70 bg-[#FAF6F0] hover:shadow-md transition-shadow">
+                <img
+                  src="/images/strength-card-6-2x.png"
+                  alt="Certificate of Completion"
+                  className="w-full h-auto object-contain block"
+                />
+              </div>
             </div>
-            <h5 className="font-serif text-xs font-bold text-[#2B150D]">
-              Certificate <br /> of Completion
-            </h5>
           </div>
 
         </div>
