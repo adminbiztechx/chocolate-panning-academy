@@ -13,8 +13,13 @@ import {
   Factory, 
   Package, 
   HelpCircle,
-  PhoneCall
+  PhoneCall,
+  Home,
+  ArrowLeft,
+  GraduationCap,
+  MessageCircle
 } from "lucide-react";
+import { siteData } from "../data/siteData";
 
 export default function Navbar({ onOpenEnquire, onOpenWorkshop }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -336,31 +341,72 @@ export default function Navbar({ onOpenEnquire, onOpenWorkshop }) {
             </button>
           </div>
 
-          {/* MOBILE MENU TOGGLE */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 text-[#2B150D] hover:bg-[#F7F1E7] rounded-lg transition-colors"
-            aria-label="Toggle navigation menu"
-          >
-            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
+          {/* MOBILE ACTIONS: QUICK BACK-HOME BUTTON & HAMBURGER */}
+          <div className="lg:hidden flex items-center gap-2">
+            {location.pathname !== "/" && (
+              <Link
+                to="/"
+                className="inline-flex items-center gap-1 text-[11px] font-bold text-[#FCFAF6] bg-[#2B150D] hover:bg-[#4B2418] px-2.5 py-1 rounded-full border border-[#D37B24]/40 shadow-sm transition-all"
+                title="Back to Home"
+              >
+                <ArrowLeft size={12} className="text-[#E69138]" />
+                <Home size={12} className="text-[#E69138]" />
+                <span>Home</span>
+              </Link>
+            )}
+
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-2 text-[#2B150D] hover:bg-[#F7F1E7] rounded-lg transition-colors cursor-pointer"
+              aria-label="Toggle navigation menu"
+            >
+              {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+            </button>
+          </div>
         </div>
+
+        {/* MOBILE BREADCRUMB / BACK TO HOME SUB-BAR */}
+        {location.pathname !== "/" && (
+          <div className="lg:hidden w-full bg-[#200D07] text-[#E3D1BC] px-4 py-1.5 flex items-center justify-between text-xs border-t border-[#381B12] shadow-inner select-none">
+            <Link 
+              to="/" 
+              className="inline-flex items-center gap-1.5 font-bold text-[#FCFAF6] hover:text-[#E69138] transition-colors"
+            >
+              <ArrowLeft size={13} className="text-[#E69138]" />
+              <Home size={13} className="text-[#E69138]" />
+              <span>Back to Home</span>
+            </Link>
+            <span className="text-[11px] text-[#E69138] font-semibold capitalize truncate max-w-[170px]">
+              {location.pathname.replace(/^\/programs\//, "").replace(/^\//, "").replace(/-/g, " ") || "Programs"}
+            </span>
+          </div>
+        )}
 
         {/* MOBILE DRAWER */}
         {mobileMenuOpen && (
           <div className="lg:hidden bg-[#FCFAF6] border-t border-[#E3D1BC] px-5 py-4 space-y-3 animate-fade-in shadow-xl">
-            <Link to="/" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-sm font-semibold text-[#2B150D]">Home</Link>
-            <Link to="/about" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-sm font-semibold text-[#2B150D]">About Us</Link>
+            <Link to="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2.5 py-2 text-sm font-semibold text-[#2B150D] hover:text-[#D37B24]">
+              <Home size={16} className="text-[#D37B24]" />
+              <span>Home</span>
+            </Link>
+            <Link to="/about" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2.5 py-2 text-sm font-semibold text-[#2B150D] hover:text-[#D37B24]">
+              <BookOpen size={16} className="text-[#D37B24]" />
+              <span>About Us</span>
+            </Link>
             
             <div className="py-2 border-y border-[#E3D1BC]/60 space-y-2">
               <Link 
                 to="/programs" 
                 onClick={() => setMobileMenuOpen(false)} 
-                className="text-xs font-bold uppercase tracking-wider text-[#B86216] block hover:underline"
+                className="text-xs font-bold uppercase tracking-wider text-[#B86216] flex items-center justify-between hover:underline"
               >
-                Training Programs →
+                <div className="flex items-center gap-2">
+                  <GraduationCap size={16} className="text-[#D37B24]" />
+                  <span>Training Programs</span>
+                </div>
+                <span>→</span>
               </Link>
-              <div className="pl-3 space-y-1.5 text-xs text-[#55271A]">
+              <div className="pl-6 space-y-1.5 text-xs text-[#55271A]">
                 <Link to="/programs" onClick={() => setMobileMenuOpen(false)} className="block py-1 hover:text-[#D37B24]">All Programs Overview</Link>
                 <Link to="/programs/beginner" onClick={() => setMobileMenuOpen(false)} className="block py-1 hover:text-[#D37B24]">Beginner Training (2 Days)</Link>
                 <Link to="/programs/product-wise" onClick={() => setMobileMenuOpen(false)} className="block py-1 hover:text-[#D37B24]">Product-Wise Training (1 Day)</Link>
@@ -369,21 +415,53 @@ export default function Navbar({ onOpenEnquire, onOpenWorkshop }) {
               </div>
             </div>
 
-            <Link to="/consultancy" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-sm font-semibold text-[#2B150D]">Consultancy Services</Link>
-            <Link to="/products" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-sm font-semibold text-[#2B150D]">Products & Solutions</Link>
-            <Link to="/more" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-sm font-semibold text-[#2B150D]">Resources & Events</Link>
-            <Link to="/enquiry" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-sm font-semibold text-[#2B150D]">Contact & Enquiry</Link>
+            <Link to="/consultancy" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2.5 py-2 text-sm font-semibold text-[#2B150D] hover:text-[#D37B24]">
+              <Factory size={16} className="text-[#D37B24]" />
+              <span>Consultancy Services</span>
+            </Link>
+            <Link to="/products" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2.5 py-2 text-sm font-semibold text-[#2B150D] hover:text-[#D37B24]">
+              <Package size={16} className="text-[#D37B24]" />
+              <span>Products & Solutions</span>
+            </Link>
+            <Link to="/more" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2.5 py-2 text-sm font-semibold text-[#2B150D] hover:text-[#D37B24]">
+              <Sparkles size={16} className="text-[#D37B24]" />
+              <span>Resources & Events</span>
+            </Link>
+            <Link to="/enquiry" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2.5 py-2 text-sm font-semibold text-[#2B150D] hover:text-[#D37B24]">
+              <PhoneCall size={16} className="text-[#D37B24]" />
+              <span>Contact & Enquiry</span>
+            </Link>
 
-            <div className="pt-2">
+            {/* Quick Contact Buttons */}
+            <div className="grid grid-cols-2 gap-2 pt-2">
+              <a
+                href={`tel:${siteData.brand.phone.replace(/[^0-9+]/g, "")}`}
+                className="bg-[#2B150D] text-[#FCFAF6] py-2.5 rounded-xl font-semibold text-xs flex items-center justify-center gap-1.5 border border-[#3D1A10]"
+              >
+                <PhoneCall size={14} className="text-[#E69138]" />
+                <span>Call Us</span>
+              </a>
+              <a
+                href={`https://wa.me/${siteData.brand.whatsapp.replace(/[^0-9]/g, "")}?text=Hello%20Aadhya%20Chocolate%20Panning%20Academy`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#0E2818] text-[#25D366] py-2.5 rounded-xl font-semibold text-xs flex items-center justify-center gap-1.5 border border-[#144222]"
+              >
+                <MessageCircle size={14} className="text-[#25D366]" />
+                <span>WhatsApp</span>
+              </a>
+            </div>
+
+            <div className="pt-1">
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
                   onOpenEnquire("Mobile Menu Enquiry");
                 }}
-                className="w-full bg-[#2B150D] text-[#FCFAF6] py-3 rounded-xl font-semibold text-xs flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full bg-[#D37B24] hover:bg-[#B86216] text-[#FCFAF6] py-3 rounded-xl font-semibold text-xs flex items-center justify-center gap-2 cursor-pointer shadow"
               >
                 <span>Enquire Now</span>
-                <Send size={13} className="text-[#E69138]" />
+                <Send size={13} />
               </button>
             </div>
           </div>

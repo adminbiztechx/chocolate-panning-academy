@@ -6,6 +6,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import EnquiryModal from "./components/EnquiryModal";
 import BrochureModal from "./components/BrochureModal";
 import WorkshopModal from "./components/WorkshopModal";
+import MobileBottomNav from "./components/MobileBottomNav";
 
 // Pages
 import Home from "./pages/Home";
@@ -59,7 +60,7 @@ export default function App() {
         />
 
         {/* Main Content Area */}
-        <main className="flex-grow">
+        <main className="flex-grow pb-16 lg:pb-0">
           <Routes>
             <Route 
               path="/" 
@@ -197,6 +198,9 @@ export default function App() {
           batchTitle={workshopTitle}
           date={workshopDate}
         />
+
+        {/* Compulsory Mobile Bottom Sticky Action Bar */}
+        <MobileBottomNav onOpenEnquire={handleOpenEnquire} />
 
       </div>
     </Router>
