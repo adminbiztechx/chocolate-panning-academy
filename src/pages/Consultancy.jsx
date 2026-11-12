@@ -17,7 +17,8 @@ import {
   Search,
   Check,
   Compass,
-  Handshake
+  Handshake,
+  FlaskConical
 } from "lucide-react";
 import { siteData } from "../data/siteData";
 
@@ -65,42 +66,69 @@ export default function Consultancy({ onOpenEnquire, onOpenBrochure }) {
         </div>
       </section>
 
-      {/* 2. FEATURE STRIP (6 items) */}
-      <section className="bg-[#FAF6F0] border-b border-[#E3D1BC] py-4">
+      {/* 2. FEATURE STRIP (6 items) - EXACT 1:1 CLONE OF USER UPLOAD */}
+      <section className="bg-[#FAF6F0] border-b border-[#E3D1BC]/80 py-3 sm:py-4 select-none">
         <div className="w-full px-4 sm:px-8 md:px-12 lg:px-[5.5%]">
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3.5 sm:gap-3 divide-y-0 sm:divide-x divide-[#E3D1BC] text-center">
+          
+          {/* Desktop & Large Tablet (>= 1024px): Exact Master 2x Graphic Strip */}
+          <div className="hidden lg:block w-full max-w-[1240px] mx-auto">
+            <picture>
+              <source srcSet="/images/consultancy-features-strip-2x.png" media="(min-width: 1024px)" />
+              <img
+                src="/images/consultancy-features-strip.png"
+                alt="Set Up New Unit, Optimize Existing Production, Product Development, Quality & Compliance, Scale-up Operations, Ongoing Technical Support"
+                className="w-full h-auto object-contain block mx-auto"
+              />
+            </picture>
+          </div>
+
+          {/* Mobile & Small Tablet (< 1024px): Responsive Grid with Icons on Left & Text on Right */}
+          <div className="lg:hidden grid grid-cols-2 sm:grid-cols-3 gap-3.5 sm:gap-4">
             
-            <div className="pt-2 sm:pt-0">
-              <Factory size={16} className="text-[#B86216] mx-auto mb-1" />
-              <span className="text-xs font-bold text-[#2B150D] block">Set Up New Unit</span>
+            <div className="flex items-center gap-2.5 bg-[#FAF1E6] p-2.5 rounded-xl border border-[#EBDCCF]/70">
+              <Factory size={20} className="text-[#8C3D10] shrink-0" />
+              <span className="text-xs font-bold text-[#200D07] leading-tight">
+                Set Up New Unit
+              </span>
             </div>
 
-            <div className="pt-2 sm:pt-0 pl-0 sm:pl-2">
-              <Settings size={16} className="text-[#B86216] mx-auto mb-1" />
-              <span className="text-xs font-bold text-[#2B150D] block">Optimize Production</span>
+            <div className="flex items-center gap-2.5 bg-[#FAF1E6] p-2.5 rounded-xl border border-[#EBDCCF]/70">
+              <Settings size={20} className="text-[#8C3D10] shrink-0" />
+              <span className="text-xs font-bold text-[#200D07] leading-tight">
+                Optimize Existing <br className="hidden sm:inline" />Production
+              </span>
             </div>
 
-            <div className="pt-2 sm:pt-0 pl-0 sm:pl-2">
-              <Sparkles size={16} className="text-[#B86216] mx-auto mb-1" />
-              <span className="text-xs font-bold text-[#2B150D] block">Product Development</span>
+            <div className="flex items-center gap-2.5 bg-[#FAF1E6] p-2.5 rounded-xl border border-[#EBDCCF]/70">
+              <FlaskConical size={20} className="text-[#8C3D10] shrink-0" />
+              <span className="text-xs font-bold text-[#200D07] leading-tight">
+                Product <br className="hidden sm:inline" />Development
+              </span>
             </div>
 
-            <div className="pt-2 sm:pt-0 pl-0 sm:pl-2">
-              <ShieldCheck size={16} className="text-[#B86216] mx-auto mb-1" />
-              <span className="text-xs font-bold text-[#2B150D] block">Quality & Compliance</span>
+            <div className="flex items-center gap-2.5 bg-[#FAF1E6] p-2.5 rounded-xl border border-[#EBDCCF]/70">
+              <Award size={20} className="text-[#8C3D10] shrink-0" />
+              <span className="text-xs font-bold text-[#200D07] leading-tight">
+                Quality & <br className="hidden sm:inline" />Compliance
+              </span>
             </div>
 
-            <div className="pt-2 sm:pt-0 pl-0 sm:pl-2">
-              <TrendingUp size={16} className="text-[#B86216] mx-auto mb-1" />
-              <span className="text-xs font-bold text-[#2B150D] block">Scale-up Operations</span>
+            <div className="flex items-center gap-2.5 bg-[#FAF1E6] p-2.5 rounded-xl border border-[#EBDCCF]/70">
+              <TrendingUp size={20} className="text-[#8C3D10] shrink-0" />
+              <span className="text-xs font-bold text-[#200D07] leading-tight">
+                Scale-up <br className="hidden sm:inline" />Operations
+              </span>
             </div>
 
-            <div className="pt-2 sm:pt-0 pl-0 sm:pl-2">
-              <Users size={16} className="text-[#B86216] mx-auto mb-1" />
-              <span className="text-xs font-bold text-[#2B150D] block">Ongoing Tech Support</span>
+            <div className="flex items-center gap-2.5 bg-[#FAF1E6] p-2.5 rounded-xl border border-[#EBDCCF]/70">
+              <Users size={20} className="text-[#8C3D10] shrink-0" />
+              <span className="text-xs font-bold text-[#200D07] leading-tight">
+                Ongoing <br className="hidden sm:inline" />Technical Support
+              </span>
             </div>
 
           </div>
+
         </div>
       </section>
 
