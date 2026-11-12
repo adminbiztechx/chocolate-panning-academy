@@ -226,28 +226,53 @@ export default function Home({ onOpenEnquire, onOpenWorkshop }) {
             </h2>
           </div>
 
-          {/* 6 Programs Horizontal Row: Exact 1:1 Layout & Cards */}
+          {/* 6 Programs Horizontal Row: Crisp 1:1 Vector Cards with HD Photography */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 sm:gap-3.5 lg:gap-4.5">
             {[
-              { id: "almond", name: "Almond Panning", img: "/images/sig-prog-almond-2x.png", link: "/programs/product-wise" },
-              { id: "cashew", name: "Cashew Panning", img: "/images/sig-prog-cashew-2x.png", link: "/programs/product-wise" },
-              { id: "raisins", name: "Raisins Panning", img: "/images/sig-prog-raisins-2x.png", link: "/programs/product-wise" },
-              { id: "coffee", name: "Coffee Bean Panning", img: "/images/sig-prog-coffee-2x.png", link: "/programs/product-wise" },
-              { id: "seeds", name: "Seeds Panning", img: "/images/sig-prog-seeds-2x.png", link: "/programs/product-wise" },
-              { id: "advanced", name: "Advanced Panning", img: "/images/sig-prog-advanced-2x.png", link: "/programs/advanced" },
+              { id: "almond", name: "Almond Panning", line1: "Almond", line2: "Panning", photo: "/images/sig-photo-almond.jpg", webp: "/images/sig-photo-almond.webp", link: "/programs/product-wise" },
+              { id: "cashew", name: "Cashew Panning", line1: "Cashew", line2: "Panning", photo: "/images/sig-photo-cashew.jpg", webp: "/images/sig-photo-cashew.webp", link: "/programs/product-wise" },
+              { id: "raisins", name: "Raisins Panning", line1: "Raisins", line2: "Panning", photo: "/images/sig-photo-raisins.jpg", webp: "/images/sig-photo-raisins.webp", link: "/programs/product-wise" },
+              { id: "coffee", name: "Coffee Bean Panning", line1: "Coffee Bean", line2: "Panning", photo: "/images/sig-photo-coffee.jpg", webp: "/images/sig-photo-coffee.webp", link: "/programs/product-wise" },
+              { id: "seeds", name: "Seeds Panning", line1: "Seeds", line2: "Panning", photo: "/images/sig-photo-seeds.jpg", webp: "/images/sig-photo-seeds.webp", link: "/programs/product-wise" },
+              { id: "advanced", name: "Advanced Panning", line1: "Advanced", line2: "Panning", photo: "/images/sig-photo-advanced.jpg", webp: "/images/sig-photo-advanced.webp", link: "/programs/advanced" },
             ].map((prog) => (
               <Link
                 key={prog.id}
                 to={prog.link}
-                className="group block rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 border border-[#E8DACB]/70 hover:border-[#D37B24] cursor-pointer"
+                className="group flex flex-col justify-between bg-[#FCFAF6] rounded-2xl p-2 sm:p-2.5 border border-[#EBDCCB] hover:border-[#D37B24] shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 cursor-pointer select-none"
                 title={prog.name}
               >
-                <img
-                  src={prog.img}
-                  alt={prog.name}
-                  className="w-full h-auto object-cover block group-hover:scale-[1.02] transition-transform duration-500"
-                />
-                <span className="sr-only">{prog.name}</span>
+                {/* 1. HD Chocolate Photo (Crystal Clear 800x600 Retina) */}
+                <div className="w-full aspect-[4/3] rounded-xl overflow-hidden bg-stone-100 mb-2 sm:mb-2.5 relative">
+                  <picture>
+                    <source srcSet={prog.webp} type="image/webp" />
+                    <img
+                      src={prog.photo}
+                      alt={prog.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                  </picture>
+                </div>
+
+                {/* 2. Vector Crisp Typography & Arrow Button (Never Blurry) */}
+                <div className="flex items-center justify-between gap-1 px-1 pb-1 pt-0.5">
+                  <div className="flex flex-col min-w-0">
+                    <span className="font-bold text-[#200D07] text-xs sm:text-[13px] leading-snug group-hover:text-[#D37B24] transition-colors truncate">
+                      {prog.line1}
+                    </span>
+                    <span className="font-bold text-[#200D07] text-xs sm:text-[13px] leading-snug group-hover:text-[#D37B24] transition-colors truncate">
+                      {prog.line2}
+                    </span>
+                  </div>
+
+                  <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full border border-[#623020]/30 text-[#623020] group-hover:border-[#D37B24] group-hover:bg-[#D37B24] group-hover:text-white flex items-center justify-center shrink-0 transition-all shadow-xs">
+                    <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 stroke-current fill-none stroke-[2] stroke-linecap-round stroke-linejoin-round group-hover:translate-x-0.5 transition-transform">
+                      <line x1="5" y1="12" x2="19" y2="12" />
+                      <polyline points="12 5 19 12 12 19" />
+                    </svg>
+                  </div>
+                </div>
               </Link>
             ))}
           </div>
