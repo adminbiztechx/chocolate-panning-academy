@@ -150,12 +150,36 @@ export const siteData = {
   ],
 
   milestones: [
-    { year: "2005", title: "Aadhya International established", desc: "With a focus on confectionery solutions." },
-    { year: "2008", title: "Started Chocolate Panning training", desc: "Pioneered specialized pan coating workshops." },
-    { year: "2015", title: "Expanded training & consultancy", desc: "Extended commercial technical support across India." },
-    { year: "2020", title: "Commercial Plant Setups", desc: "Helped multiple businesses set up panned chocolate production units." },
-    { year: "2024", title: "1000+ Trained Milestone", desc: "Trained 1000+ professionals and supported 100+ businesses." },
-    { year: "Today", title: "A Trusted Industry Leader", desc: "Premier name in chocolate panning training, consultancy and business growth." }
+    { 
+      year: "2005", 
+      icon: "Rocket",
+      desc: "Aadhya International established with a focus on confectionery solutions." 
+    },
+    { 
+      year: "2008", 
+      icon: "GraduationCap",
+      desc: "Started Chocolate Panning training programs." 
+    },
+    { 
+      year: "2015", 
+      icon: "Users",
+      desc: "Expanded training & consultancy support across India." 
+    },
+    { 
+      year: "2020", 
+      icon: "Factory",
+      desc: "Helped multiple businesses set up panned chocolate production units." 
+    },
+    { 
+      year: "2024", 
+      icon: "Globe",
+      desc: "Trained 1000+ professionals and supported 100+ businesses." 
+    },
+    { 
+      year: "Today", 
+      icon: "Trophy",
+      desc: "A trusted name in chocolate panning training, consultancy and business growth." 
+    }
   ],
 
   consultancyServices: [

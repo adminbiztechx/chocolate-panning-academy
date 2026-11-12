@@ -13,7 +13,11 @@ import {
   Settings, 
   FileCheck,
   TrendingUp,
-  Sparkles
+  Sparkles,
+  Rocket,
+  GraduationCap,
+  Globe,
+  Trophy
 } from "lucide-react";
 import { siteData } from "../data/siteData";
 
@@ -306,31 +310,63 @@ export default function About({ onOpenEnquire }) {
         </div>
       </section>
 
-      {/* 6. OUR JOURNEY MILESTONES */}
-      <section id="milestones-section" className="py-16 bg-[#FCFAF6] border-y border-[#E3D1BC]">
+      {/* 6. OUR JOURNEY MILESTONES - EXACT 1:1 CLONE OF USER UPLOAD */}
+      <section id="milestones-section" className="py-10 sm:py-16 bg-[#FAF6F0] border-t border-[#E3D1BC]/60">
         <div className="w-full px-4 sm:px-8 md:px-12 lg:px-[5.5%]">
-          <div className="text-center mb-12">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#B86216]">
-              OUR JOURNEY
-            </span>
-            <h2 className="font-serif text-2xl sm:text-4xl font-bold text-[#2B150D] mt-1">
-              Milestones in Our Chocolate Panning Journey
-            </h2>
+          
+          {/* Desktop & Tablet (>= 768px): Exact Master 2x Graphic Banner */}
+          <div className="hidden md:block w-full max-w-[1240px] mx-auto select-none">
+            <picture>
+              <source srcSet="/images/about-milestones-banner-2x.png" media="(min-width: 768px)" />
+              <img
+                src="/images/about-milestones-banner.png"
+                alt="Our Journey - Milestones in Our Chocolate Panning Journey: 2005, 2008, 2015, 2020, 2024, Today"
+                className="w-full h-auto object-contain block mx-auto"
+              />
+            </picture>
           </div>
 
-          {/* 6 Milestones Line */}
-          <div className="grid grid-cols-2 md:grid-cols-6 gap-6 relative">
-            {siteData.milestones.map((m, idx) => (
-              <div key={m.year} className="flex flex-col items-center text-center group">
-                <div className="w-12 h-12 rounded-full bg-[#FAF6F0] border-2 border-[#D37B24] flex items-center justify-center text-[#D37B24] font-bold text-xs shadow mb-3 group-hover:scale-110 transition-transform">
-                  {idx + 1}
-                </div>
-                <div className="font-serif text-lg font-bold text-[#2B150D]">{m.year}</div>
-                <p className="text-xs font-semibold text-[#623020] mt-1">{m.title}</p>
-                <p className="text-[11px] text-[#623020]/80 mt-1 leading-snug">{m.desc}</p>
-              </div>
-            ))}
+          {/* Mobile Layout (< 768px): Clean Connected Vertical Timeline */}
+          <div className="md:hidden space-y-6">
+            <div className="text-center space-y-1">
+              <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#9E3E1B]">
+                OUR JOURNEY
+              </span>
+              <h2 className="font-serif text-2xl font-bold text-[#2A1209]">
+                Milestones in Our Chocolate Panning Journey
+              </h2>
+            </div>
+
+            <div className="relative pl-6 space-y-6 before:content-[''] before:absolute before:left-[21px] before:top-3 before:bottom-3 before:w-0.5 before:border-l-2 before:border-dotted before:border-[#CBB49E]">
+              {siteData.milestones.map((m) => {
+                const IconComponent = {
+                  Rocket,
+                  GraduationCap,
+                  Users,
+                  Factory,
+                  Globe,
+                  Trophy,
+                }[m.icon] || Rocket;
+
+                return (
+                  <div key={m.year} className="relative flex items-start gap-4">
+                    <div className="w-11 h-11 shrink-0 rounded-full bg-[#F5EBE1] border border-[#E4D2C1] flex items-center justify-center text-[#8C3E1B] shadow-sm relative z-10">
+                      <IconComponent size={20} />
+                    </div>
+                    <div className="pt-1 space-y-0.5">
+                      <div className="font-sans font-bold text-base text-[#1E0D06]">
+                        {m.year}
+                      </div>
+                      <p className="text-xs text-[#522919] leading-relaxed">
+                        {m.desc}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
+
         </div>
       </section>
 
