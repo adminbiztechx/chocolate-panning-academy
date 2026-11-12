@@ -103,56 +103,120 @@ export default function Consultancy({ onOpenEnquire, onOpenBrochure }) {
         </div>
       </section>
 
-      {/* 3. OUR CONSULTANCY SERVICES (Left Drum + Right 6 Cards) */}
-      <section className="py-16 w-full px-4 sm:px-8 md:px-12 lg:px-[5.5%]">
-        <div className="mb-10">
-          <h2 className="font-serif text-2xl sm:text-4xl font-bold text-[#2B150D]">
-            Our Consultancy Services
-          </h2>
-          <p className="text-xs sm:text-sm text-[#55271A] mt-1 max-w-xl">
-            Practical, industry-proven solutions to improve product quality, production efficiency and business performance.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      {/* 3. OUR CONSULTANCY SERVICES - EXACT 1:1 CLONE OF USER UPLOAD */}
+      <section className="py-12 sm:py-16 w-full px-4 sm:px-8 md:px-12 lg:px-[5.5%] bg-[#FAF6F0]">
+        <div className="w-full max-w-[1240px] mx-auto">
           
-          {/* Left Tall Panning Drum */}
-          <div className="lg:col-span-4 rounded-3xl overflow-hidden border border-[#E3D1BC] shadow-xl bg-[#180905] h-full min-h-[460px]">
-            <img
-              src="/images/consultancy-tall-drum.png"
-              alt="Commercial Panning Drum Machine"
-              className="w-full h-full object-cover"
-            />
-          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 xl:gap-8 items-stretch">
+            
+            {/* Left Tall Panning Drum Machine (4 cols on Desktop) */}
+            <div className="lg:col-span-4 hidden lg:block rounded-3xl overflow-hidden shadow-md border border-[#E8DACB] bg-[#180905]">
+              <img
+                src="/images/consultancy-drum-showcase-2x.png"
+                alt="Stainless Steel Chocolate Panning Drum Machine"
+                className="w-full h-full object-cover block"
+              />
+            </div>
 
-          {/* Right 6 Cards Grid */}
-          <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {siteData.consultancyServices.map((srv, idx) => (
-              <div
-                key={idx}
-                className="bg-[#FCFAF6] rounded-2xl p-5 border border-[#E3D1BC] flex flex-col justify-between hover:border-[#D37B24] hover:shadow-lg transition-all group cursor-pointer"
-                onClick={() => onOpenEnquire(`Consultancy Service: ${srv.title}`)}
-              >
-                <div>
-                  <div className="w-10 h-10 rounded-xl bg-[#FAF6F0] text-[#B86216] flex items-center justify-center mb-3 group-hover:bg-[#D37B24] group-hover:text-white transition-colors">
-                    <Factory size={18} />
-                  </div>
-                  <h4 className="font-serif text-base font-bold text-[#2B150D] group-hover:text-[#D37B24] transition-colors">
-                    {srv.title}
-                  </h4>
-                  <p className="text-xs text-[#623020] mt-1.5 leading-relaxed">
-                    {srv.desc}
-                  </p>
-                </div>
-
-                <div className="pt-4 border-t border-[#E3D1BC]/60 mt-4 flex items-center justify-between">
-                  <span className="text-[11px] font-semibold text-[#B86216]">Request Advisory</span>
-                  <div className="w-6 h-6 rounded-full border border-[#D8C7B5] group-hover:border-[#D37B24] flex items-center justify-center text-[#2B150D] group-hover:text-[#D37B24] transition-colors">
-                    <ArrowRight size={11} />
-                  </div>
-                </div>
+            {/* Right Content Area (8 cols on Desktop / Full Width on Mobile) */}
+            <div className="lg:col-span-8 flex flex-col justify-between space-y-6">
+              
+              {/* Header with Title & Amber Underline */}
+              <div>
+                <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-[#200D07]">
+                  Our Consultancy Services
+                </h2>
+                <div className="w-12 h-1 bg-[#D37B24] rounded-full mt-2 mb-2.5"></div>
+                <p className="text-xs sm:text-sm text-[#55271A] max-w-2xl leading-relaxed">
+                  Practical, industry-proven solutions to improve product quality, production efficiency and business performance.
+                </p>
               </div>
-            ))}
+
+              {/* 6 Services Cards Grid (3 cols on desktop, 2 cols on mobile) */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3.5 sm:gap-4">
+                
+                {/* Card 1: Plant Setup & Project Planning */}
+                <button
+                  type="button"
+                  onClick={() => onOpenEnquire("Consultancy Service: Plant Setup & Project Planning")}
+                  className="rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-200 border border-[#EBDCCF]/80 text-left bg-[#FAF6F0] cursor-pointer group"
+                >
+                  <img
+                    src="/images/consultancy-card-1-2x.png"
+                    alt="Plant Setup & Project Planning - Guidance on machinery, layout, capacity and overall setup"
+                    className="w-full h-auto object-contain block group-hover:scale-[1.02] transition-transform"
+                  />
+                </button>
+
+                {/* Card 2: Product Development */}
+                <button
+                  type="button"
+                  onClick={() => onOpenEnquire("Consultancy Service: Product Development")}
+                  className="rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-200 border border-[#EBDCCF]/80 text-left bg-[#FAF6F0] cursor-pointer group"
+                >
+                  <img
+                    src="/images/consultancy-card-2-2x.png"
+                    alt="Product Development - Recipes, formulations and customized product ranges as per your market"
+                    className="w-full h-auto object-contain block group-hover:scale-[1.02] transition-transform"
+                  />
+                </button>
+
+                {/* Card 3: Process Optimization */}
+                <button
+                  type="button"
+                  onClick={() => onOpenEnquire("Consultancy Service: Process Optimization")}
+                  className="rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-200 border border-[#EBDCCF]/80 text-left bg-[#FAF6F0] cursor-pointer group"
+                >
+                  <img
+                    src="/images/consultancy-card-3-2x.png"
+                    alt="Process Optimization - Improve coating, finishing, cycle time and overall efficiency"
+                    className="w-full h-auto object-contain block group-hover:scale-[1.02] transition-transform"
+                  />
+                </button>
+
+                {/* Card 4: Quality & Compliance */}
+                <button
+                  type="button"
+                  onClick={() => onOpenEnquire("Consultancy Service: Quality & Compliance")}
+                  className="rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-200 border border-[#EBDCCF]/80 text-left bg-[#FAF6F0] cursor-pointer group"
+                >
+                  <img
+                    src="/images/consultancy-card-4-2x.png"
+                    alt="Quality & Compliance - Quality standards, shelf life, testing and food safety guidance"
+                    className="w-full h-auto object-contain block group-hover:scale-[1.02] transition-transform"
+                  />
+                </button>
+
+                {/* Card 5: Costing & Profitability */}
+                <button
+                  type="button"
+                  onClick={() => onOpenEnquire("Consultancy Service: Costing & Profitability")}
+                  className="rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-200 border border-[#EBDCCF]/80 text-left bg-[#FAF6F0] cursor-pointer group"
+                >
+                  <img
+                    src="/images/consultancy-card-5-2x.png"
+                    alt="Costing & Profitability - Raw material usage, process costing, and improving production margins"
+                    className="w-full h-auto object-contain block group-hover:scale-[1.02] transition-transform"
+                  />
+                </button>
+
+                {/* Card 6: Scale-up & Business Growth */}
+                <button
+                  type="button"
+                  onClick={() => onOpenEnquire("Consultancy Service: Scale-up & Business Growth")}
+                  className="rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-200 border border-[#EBDCCF]/80 text-left bg-[#FAF6F0] cursor-pointer group"
+                >
+                  <img
+                    src="/images/consultancy-card-6-2x.png"
+                    alt="Scale-up & Business Growth - Expand product range, increase capacity and enter new markets"
+                    className="w-full h-auto object-contain block group-hover:scale-[1.02] transition-transform"
+                  />
+                </button>
+
+              </div>
+
+            </div>
+
           </div>
 
         </div>
