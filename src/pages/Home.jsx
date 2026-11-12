@@ -68,48 +68,64 @@ export default function Home({ onOpenEnquire, onOpenWorkshop }) {
         </div>
       </section>
 
-      {/* 2. STATS BAR / TRUST BAR - PERFECTLY ALIGNED AT 5.5% GUTTER */}
-      <section className="w-full bg-[#FAF6F0] border-b border-[#E3D1BC]">
-        <div className="w-full px-4 sm:px-8 md:px-12 lg:px-[5.5%] py-6 sm:py-7">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 divide-y-0 md:divide-x divide-[#E3D1BC]">
+      {/* 2. STATS BAR / TRUST BAR - SINGLE HORIZONTAL ROW ON ALL DEVICES (EXACT MATCH) */}
+      <section className="w-full bg-[#FAF6F0] border-b border-[#E3D1BC] select-none py-3.5 sm:py-7">
+        <div className="w-full px-2 sm:px-8 md:px-12 lg:px-[5.5%]">
+          <div className="grid grid-cols-4 divide-x divide-[#E3D1BC] items-center text-center sm:text-left">
             
-            <div className="flex items-center gap-3 sm:gap-4 p-1.5 sm:p-0">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-[#F7F1E7] border border-[#E3D1BC] flex items-center justify-center text-[#B86216] shrink-0 shadow-sm">
-                <Calendar size={20} className="sm:w-[22px] sm:h-[22px]" />
+            <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-1 sm:gap-4 px-1 sm:px-4">
+              <div className="w-7 h-7 sm:w-12 sm:h-12 rounded-lg sm:rounded-2xl bg-[#F7F1E7] border border-[#E3D1BC] flex items-center justify-center text-[#B86216] shrink-0 shadow-sm">
+                <Calendar size={14} className="sm:w-[22px] sm:h-[22px]" />
               </div>
-              <div>
-                <div className="font-serif font-bold text-base sm:text-xl text-[#2B150D] whitespace-nowrap">Since 2005</div>
-                <div className="text-[11px] sm:text-xs text-[#623020]">Industry Experience</div>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3 sm:gap-4 pl-0 md:pl-8 p-1.5 sm:p-0">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-[#F7F1E7] border border-[#E3D1BC] flex items-center justify-center text-[#B86216] shrink-0 shadow-sm">
-                <Users size={20} className="sm:w-[22px] sm:h-[22px]" />
-              </div>
-              <div>
-                <div className="font-serif font-bold text-base sm:text-xl text-[#2B150D] whitespace-nowrap">1000+</div>
-                <div className="text-[11px] sm:text-xs text-[#623020]">Professionals Trained</div>
+              <div className="min-w-0">
+                <div className="font-serif font-bold text-[10px] min-[360px]:text-xs sm:text-lg lg:text-xl text-[#2B150D] leading-tight whitespace-nowrap">
+                  Since 2005
+                </div>
+                <div className="text-[8px] min-[360px]:text-[10px] sm:text-xs text-[#623020] leading-tight whitespace-nowrap">
+                  Industry Experience
+                </div>
               </div>
             </div>
 
-            <div className="flex items-center gap-3 sm:gap-4 pl-0 md:pl-8 p-1.5 sm:p-0">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-[#F7F1E7] border border-[#E3D1BC] flex items-center justify-center text-[#B86216] shrink-0 shadow-sm">
-                <Award size={20} className="sm:w-[22px] sm:h-[22px]" />
+            <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-1 sm:gap-4 px-1 sm:px-4">
+              <div className="w-7 h-7 sm:w-12 sm:h-12 rounded-lg sm:rounded-2xl bg-[#F7F1E7] border border-[#E3D1BC] flex items-center justify-center text-[#B86216] shrink-0 shadow-sm">
+                <Users size={14} className="sm:w-[22px] sm:h-[22px]" />
               </div>
-              <div>
-                <div className="font-serif font-bold text-base sm:text-xl text-[#2B150D] whitespace-nowrap">Expert-Led</div>
-                <div className="text-[11px] sm:text-xs text-[#623020]">Practical Training</div>
+              <div className="min-w-0">
+                <div className="font-serif font-bold text-[10px] min-[360px]:text-xs sm:text-lg lg:text-xl text-[#2B150D] leading-tight whitespace-nowrap">
+                  1000+
+                </div>
+                <div className="text-[8px] min-[360px]:text-[10px] sm:text-xs text-[#623020] leading-tight whitespace-nowrap">
+                  Professionals Trained
+                </div>
               </div>
             </div>
 
-            <div className="flex items-center gap-3 sm:gap-4 pl-0 md:pl-8 p-1.5 sm:p-0">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-[#F7F1E7] border border-[#E3D1BC] flex items-center justify-center text-[#B86216] shrink-0 shadow-sm">
-                <TrendingUp size={20} className="sm:w-[22px] sm:h-[22px]" />
+            <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-1 sm:gap-4 px-1 sm:px-4">
+              <div className="w-7 h-7 sm:w-12 sm:h-12 rounded-lg sm:rounded-2xl bg-[#F7F1E7] border border-[#E3D1BC] flex items-center justify-center text-[#B86216] shrink-0 shadow-sm">
+                <Award size={14} className="sm:w-[22px] sm:h-[22px]" />
               </div>
-              <div>
-                <div className="font-serif font-bold text-base sm:text-xl text-[#2B150D] whitespace-nowrap">End-to-End</div>
-                <div className="text-[11px] sm:text-xs text-[#623020]">Business Support</div>
+              <div className="min-w-0">
+                <div className="font-serif font-bold text-[10px] min-[360px]:text-xs sm:text-lg lg:text-xl text-[#2B150D] leading-tight whitespace-nowrap">
+                  Expert-Led
+                </div>
+                <div className="text-[8px] min-[360px]:text-[10px] sm:text-xs text-[#623020] leading-tight whitespace-nowrap">
+                  Practical Training
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-1 sm:gap-4 px-1 sm:px-4">
+              <div className="w-7 h-7 sm:w-12 sm:h-12 rounded-lg sm:rounded-2xl bg-[#F7F1E7] border border-[#E3D1BC] flex items-center justify-center text-[#B86216] shrink-0 shadow-sm">
+                <TrendingUp size={14} className="sm:w-[22px] sm:h-[22px]" />
+              </div>
+              <div className="min-w-0">
+                <div className="font-serif font-bold text-[10px] min-[360px]:text-xs sm:text-lg lg:text-xl text-[#2B150D] leading-tight whitespace-nowrap">
+                  End-to-End
+                </div>
+                <div className="text-[8px] min-[360px]:text-[10px] sm:text-xs text-[#623020] leading-tight whitespace-nowrap">
+                  Business Support
+                </div>
               </div>
             </div>
 
