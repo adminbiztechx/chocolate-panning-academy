@@ -171,46 +171,57 @@ export default function About({ onOpenEnquire }) {
         </div>
       </section>
 
-      {/* 4. OUR EXPERTISE IN NUMBERS (Dark Banner) */}
-      <section className="bg-[#2B150D] text-white py-12 border-b border-[#4B2418]">
+      {/* 4. OUR EXPERTISE IN NUMBERS - EXACT 1:1 CLONE OF USER UPLOAD */}
+      <section className="py-6 sm:py-10 bg-[#FAF6F0]">
         <div className="w-full px-4 sm:px-8 md:px-12 lg:px-[5.5%]">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            
-            <div className="lg:col-span-3">
-              <h3 className="font-serif text-2xl font-bold text-white">
-                Our Expertise <br /> in Numbers
+          
+          {/* Desktop & Tablet (>= 640px): Exact Master 2x Graphic Card */}
+          <div className="hidden sm:block w-full max-w-[1240px] mx-auto rounded-3xl overflow-hidden shadow-lg select-none">
+            <picture>
+              <source srcSet="/images/about-expertise-banner-2x.png" media="(min-width: 640px)" />
+              <img
+                src="/images/about-expertise-banner.png"
+                alt="Our Expertise in Numbers - Since 2005, 1000+ Professionals Trained, 20+ Years of Expertise, 100+ Business Supported"
+                className="w-full h-auto object-contain block"
+              />
+            </picture>
+          </div>
+
+          {/* Mobile View (< 640px): Dedicated Dark Chocolate Card with Crisp Typography */}
+          <div className="sm:hidden w-full bg-[#421D12] text-white rounded-3xl p-5 border border-[#5A291A] shadow-md space-y-4">
+            <div className="text-center pb-2 border-b border-[#5A291A]">
+              <h3 className="font-serif text-xl font-bold text-white">
+                Our Expertise in Numbers
               </h3>
             </div>
 
-            <div className="lg:col-span-9 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 divide-y-0 sm:divide-x divide-[#4B2418]">
-              
-              <div className="text-center pt-2 sm:pt-0">
-                <Calendar size={20} className="text-[#E69138] mx-auto mb-1" />
-                <div className="font-serif text-xl sm:text-2xl font-bold text-white">Since 2005</div>
-                <div className="text-[11px] text-[#E3D1BC]/80">Established Brand</div>
+            <div className="grid grid-cols-2 gap-3 text-center">
+              <div className="bg-[#31140B] p-3 rounded-2xl border border-[#4B1E12] flex flex-col items-center">
+                <Calendar size={18} className="text-[#E69138] mb-1" />
+                <span className="text-xs text-[#E3D1BC]">Since</span>
+                <span className="text-base font-serif font-bold text-white">2005</span>
               </div>
 
-              <div className="text-center pt-2 sm:pt-0">
-                <Users size={20} className="text-[#E69138] mx-auto mb-1" />
-                <div className="font-serif text-xl sm:text-2xl font-bold text-white">1000+</div>
-                <div className="text-[11px] text-[#E3D1BC]/80">Professionals Trained</div>
+              <div className="bg-[#31140B] p-3 rounded-2xl border border-[#4B1E12] flex flex-col items-center">
+                <Users size={18} className="text-[#E69138] mb-1" />
+                <span className="text-base font-serif font-bold text-white">1000+</span>
+                <span className="text-[10px] text-[#E3D1BC]">Professionals Trained</span>
               </div>
 
-              <div className="text-center pt-2 sm:pt-0">
-                <Award size={20} className="text-[#E69138] mx-auto mb-1" />
-                <div className="font-serif text-xl sm:text-2xl font-bold text-white">20+</div>
-                <div className="text-[11px] text-[#E3D1BC]/80">Years of Expertise</div>
+              <div className="bg-[#31140B] p-3 rounded-2xl border border-[#4B1E12] flex flex-col items-center">
+                <Settings size={18} className="text-[#E69138] mb-1" />
+                <span className="text-base font-serif font-bold text-white">20+</span>
+                <span className="text-[10px] text-[#E3D1BC]">Years of Expertise</span>
               </div>
 
-              <div className="text-center pt-2 sm:pt-0">
-                <Factory size={20} className="text-[#E69138] mx-auto mb-1" />
-                <div className="font-serif text-xl sm:text-2xl font-bold text-white">100+</div>
-                <div className="text-[11px] text-[#E3D1BC]/80">Businesses Supported</div>
+              <div className="bg-[#31140B] p-3 rounded-2xl border border-[#4B1E12] flex flex-col items-center">
+                <Factory size={18} className="text-[#E69138] mb-1" />
+                <span className="text-base font-serif font-bold text-white">100+</span>
+                <span className="text-[10px] text-[#E3D1BC]">Business Supported</span>
               </div>
-
             </div>
-
           </div>
+
         </div>
       </section>
 
