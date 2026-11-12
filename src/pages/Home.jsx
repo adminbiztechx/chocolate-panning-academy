@@ -78,10 +78,10 @@ export default function Home({ onOpenEnquire, onOpenWorkshop }) {
                 <Calendar size={14} className="sm:w-[22px] sm:h-[22px]" />
               </div>
               <div className="min-w-0">
-                <div className="font-serif font-bold text-[10px] min-[360px]:text-xs sm:text-lg lg:text-xl text-[#2B150D] leading-tight whitespace-nowrap">
+                <div className="font-serif font-bold text-[11px] sm:text-lg lg:text-xl text-[#2B150D] leading-tight whitespace-nowrap">
                   Since 2005
                 </div>
-                <div className="text-[8px] min-[360px]:text-[10px] sm:text-xs text-[#623020] leading-tight whitespace-nowrap">
+                <div className="text-[9px] sm:text-xs text-[#623020] leading-tight sm:whitespace-nowrap">
                   Industry Experience
                 </div>
               </div>
@@ -92,10 +92,10 @@ export default function Home({ onOpenEnquire, onOpenWorkshop }) {
                 <Users size={14} className="sm:w-[22px] sm:h-[22px]" />
               </div>
               <div className="min-w-0">
-                <div className="font-serif font-bold text-[10px] min-[360px]:text-xs sm:text-lg lg:text-xl text-[#2B150D] leading-tight whitespace-nowrap">
+                <div className="font-serif font-bold text-[11px] sm:text-lg lg:text-xl text-[#2B150D] leading-tight whitespace-nowrap">
                   1000+
                 </div>
-                <div className="text-[8px] min-[360px]:text-[10px] sm:text-xs text-[#623020] leading-tight whitespace-nowrap">
+                <div className="text-[9px] sm:text-xs text-[#623020] leading-tight sm:whitespace-nowrap">
                   Professionals Trained
                 </div>
               </div>
@@ -106,10 +106,10 @@ export default function Home({ onOpenEnquire, onOpenWorkshop }) {
                 <Award size={14} className="sm:w-[22px] sm:h-[22px]" />
               </div>
               <div className="min-w-0">
-                <div className="font-serif font-bold text-[10px] min-[360px]:text-xs sm:text-lg lg:text-xl text-[#2B150D] leading-tight whitespace-nowrap">
+                <div className="font-serif font-bold text-[11px] sm:text-lg lg:text-xl text-[#2B150D] leading-tight whitespace-nowrap">
                   Expert-Led
                 </div>
-                <div className="text-[8px] min-[360px]:text-[10px] sm:text-xs text-[#623020] leading-tight whitespace-nowrap">
+                <div className="text-[9px] sm:text-xs text-[#623020] leading-tight sm:whitespace-nowrap">
                   Practical Training
                 </div>
               </div>
@@ -120,10 +120,10 @@ export default function Home({ onOpenEnquire, onOpenWorkshop }) {
                 <TrendingUp size={14} className="sm:w-[22px] sm:h-[22px]" />
               </div>
               <div className="min-w-0">
-                <div className="font-serif font-bold text-[10px] min-[360px]:text-xs sm:text-lg lg:text-xl text-[#2B150D] leading-tight whitespace-nowrap">
+                <div className="font-serif font-bold text-[11px] sm:text-lg lg:text-xl text-[#2B150D] leading-tight whitespace-nowrap">
                   End-to-End
                 </div>
-                <div className="text-[8px] min-[360px]:text-[10px] sm:text-xs text-[#623020] leading-tight whitespace-nowrap">
+                <div className="text-[9px] sm:text-xs text-[#623020] leading-tight sm:whitespace-nowrap">
                   Business Support
                 </div>
               </div>
