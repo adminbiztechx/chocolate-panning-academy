@@ -4,12 +4,24 @@ export const siteData = {
     subName: "Chocolate Panning Academy",
     tagline: "A dedicated centre of excellence for Chocolate Panning Training, Consultancy and Business Development.",
     since: "2005",
-    phone: "+91 91 1234 5678",
-    whatsapp: "+91 91 1234 5678",
-    email: "info@aadhyainternational.com",
-    address: "Mumbai, Maharashtra, India",
+    founder: "Deepak Kumar",
+    phone: "+91 8600134951",
+    altPhone: "+91 9322876919",
+    whatsapp: "+91 8600134951",
+    whatsappLink: "https://wa.me/918600134951?text=Hi%20Aadhya%20International,%20I%20am%20interested%20in%20Chocolate%20Panning%20Training%20and%20Consultancy",
+    email: "aadhyainternational@gmail.com",
+    altEmail: "chocolatepanningacademy@gmail.com",
+    address: "325, Keshri house, North Patel Nagar, Hesag, Hatia, Ranchi, Jharkhand - 834003",
+    trainingLocation: "Mumbai & Ranchi, India",
+    workHours: "Mon - Sat: 10:00 AM to 06:00 PM",
+    socials: {
+      youtube: "https://www.youtube.com/@chocolatepanning",
+      instagram: "https://www.instagram.com/chocolatepanningacademy/",
+      facebook: "https://www.facebook.com/chocolatepanningacademy",
+      whatsapp: "https://wa.me/918600134951"
+    },
     upcomingWorkshop: {
-      title: "Chocolate Panning Masterclass",
+      title: "Upcoming Chocolate Panning Workshop",
       date: "15–17 Mar 2025",
       location: "Mumbai, India",
     }
@@ -127,23 +139,30 @@ export const siteData = {
 
   testimonials: [
     {
-      quote: "The training was extremely practical and business-focused. I gained the confidence to start my own panned chocolate line.",
-      author: "Rohit Mehta",
-      role: "Entrepreneur, Mumbai",
+      quote: "Amazing experience! The personalized training modules and practical approach made the learning process smooth and enjoyable. Thanks, Aadhya International!",
+      author: "Mohit Sachdev",
+      role: "Confectionery Business Owner",
       rating: 5,
       avatar: "/images/testimonial-rohit.png"
     },
     {
-      quote: "Deepak Sir's guidance helped us optimize our panning pan cycle time by 40% and achieve an international mirror-finish glaze.",
-      author: "Sneha Patel",
-      role: "Confectionery Brand Founder, Gujarat",
+      quote: "The team at Aadhya International is so supportive. Their hands-on training and step-by-step guidance helped me create high-quality panned chocolates effortlessly.",
+      author: "Kavita Arora",
+      role: "Artisanal Chocolatier",
       rating: 5,
       avatar: "/images/testimonial-rohit.png"
     },
     {
-      quote: "From raw material sourcing to commercial packaging, Aadhya Academy gave us end-to-end blueprint for our artisanal dragee venture.",
-      author: "Vikram Singhania",
-      role: "Food Manufacturer, Bengaluru",
+      quote: "Joining Aadhya International was the best decision. Their professional techniques, insider tips, and supportive team have transformed my chocolate-making skills.",
+      author: "Mr. Laxman",
+      role: "Commercial Confectioner",
+      rating: 5,
+      avatar: "/images/testimonial-rohit.png"
+    },
+    {
+      quote: "Aadhya International exceeded my expectations. Their expert guidance and supportive trainers made chocolate panning fun and easy to learn. Truly outstanding!",
+      author: "Praveen Sarawat",
+      role: "Food & Confectionery Entrepreneur",
       rating: 5,
       avatar: "/images/testimonial-rohit.png"
     }
@@ -262,8 +281,16 @@ export const siteData = {
 
   faqs: [
     {
-      q: "Do I need prior experience in chocolate making to join the beginner program?",
-      a: "No prior experience is necessary. Our Beginner Chocolate Panning course starts from foundational chocolate chemistry, temperature tempering, roasting fundamentals and raw nut handling."
+      q: "Is prior experience in chocolate making required?",
+      a: "No prior experience is needed. Our courses cater to all skill levels, from beginners to experts, with personalized training to match your experience."
+    },
+    {
+      q: "What equipment do I need for the chocolate panning course?",
+      a: "We provide all necessary materials and equipment for the course, ensuring a seamless learning experience. You can also bring your own tools if preferred."
+    },
+    {
+      q: "What if I need to cancel my registration?",
+      a: "We understand that plans can change. You can easily cancel or reschedule your registration with prior notice. Please reach out to us for further assistance."
     },
     {
       q: "Is the training completely hands-on?",
@@ -279,7 +306,7 @@ export const siteData = {
     },
     {
       q: "Where does the practical offline training take place?",
-      a: "All hands-on batches are hosted at our training & development center in Mumbai, India. We also conduct customized on-site corporate training."
+      a: "All hands-on batches are hosted at our training & development centers in Mumbai & Ranchi, India. We also conduct customized on-site corporate training."
     }
   ]
 };

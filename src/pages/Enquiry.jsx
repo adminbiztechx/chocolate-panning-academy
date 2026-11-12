@@ -16,9 +16,12 @@ import {
   Star,
   GraduationCap,
   Sparkles,
-  ArrowRight
+  ArrowRight,
+  MapPin,
+  Clock
 } from "lucide-react";
 import confetti from "canvas-confetti";
+import { siteData } from "../data/siteData";
 
 export default function Enquiry() {
   const [formData, setFormData] = useState({
@@ -304,48 +307,58 @@ export default function Enquiry() {
       </section>
 
       {/* 3. DIRECT CONTACT STRIP (Call Us, WhatsApp, Email, Book Consultation) */}
-      <section className="bg-[#FAF6F0] border-y border-[#E3D1BC] py-8">
+      <section className="bg-[#FAF6F0] border-y border-[#E3D1BC] py-10">
         <div className="w-full px-4 sm:px-8 md:px-12 lg:px-[5.5%]">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             
             <a 
-              href="tel:+919112345678"
-              className="flex items-center gap-3 p-3 rounded-xl bg-white border border-[#E3D1BC] hover:border-[#D37B24] transition-colors"
+              href={`tel:${siteData.brand.phone.replace(/[^0-9+]/g, "")}`}
+              className="flex items-center gap-3 p-4 rounded-2xl bg-white border border-[#E3D1BC] hover:border-[#D37B24] hover:shadow-md transition-all group"
             >
-              <div className="w-10 h-10 rounded-xl bg-[#FAF6F0] text-[#D37B24] flex items-center justify-center shrink-0">
-                <Phone size={18} />
+              <div className="w-11 h-11 rounded-xl bg-[#FAF6F0] text-[#D37B24] group-hover:bg-[#2B150D] group-hover:text-[#E69138] flex items-center justify-center shrink-0 transition-colors">
+                <Phone size={19} />
               </div>
-              <div>
-                <span className="text-[11px] text-[#623020] block">Call Us</span>
-                <strong className="text-xs font-bold text-[#2B150D]">+91 91 1234 5678</strong>
+              <div className="min-w-0">
+                <span className="text-[11px] text-[#623020] block">Call Us Directly</span>
+                <strong className="text-xs font-bold text-[#2B150D] group-hover:text-[#D37B24] transition-colors block truncate">
+                  {siteData.brand.phone}
+                </strong>
+                <span className="text-[10px] text-[#8C5E4A] block truncate">{siteData.brand.altPhone}</span>
               </div>
             </a>
 
             <a 
-              href="https://wa.me/919112345678"
+              href={siteData.brand.whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 p-3 rounded-xl bg-white border border-[#E3D1BC] hover:border-[#D37B24] transition-colors"
+              className="flex items-center gap-3 p-4 rounded-2xl bg-white border border-[#E3D1BC] hover:border-emerald-600 hover:shadow-md transition-all group"
             >
-              <div className="w-10 h-10 rounded-xl bg-[#FAF6F0] text-[#D37B24] flex items-center justify-center shrink-0">
-                <MessageSquare size={18} />
+              <div className="w-11 h-11 rounded-xl bg-emerald-50 text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white flex items-center justify-center shrink-0 transition-colors">
+                <MessageSquare size={19} />
               </div>
-              <div>
+              <div className="min-w-0">
                 <span className="text-[11px] text-[#623020] block">Chat on WhatsApp</span>
-                <strong className="text-xs font-bold text-[#2B150D]">+91 91 1234 5678</strong>
+                <strong className="text-xs font-bold text-[#2B150D] group-hover:text-emerald-700 transition-colors block truncate">
+                  {siteData.brand.whatsapp}
+                </strong>
+                <span className="text-[10px] text-emerald-600 block">Instant Response</span>
               </div>
             </a>
 
             <a 
-              href="mailto:info@aadhyainternational.com"
-              className="flex items-center gap-3 p-3 rounded-xl bg-white border border-[#E3D1BC] hover:border-[#D37B24] transition-colors"
+              href={`mailto:${siteData.brand.email}`}
+              className="flex items-center gap-3 p-4 rounded-2xl bg-white border border-[#E3D1BC] hover:border-[#D37B24] hover:shadow-md transition-all group"
             >
-              <div className="w-10 h-10 rounded-xl bg-[#FAF6F0] text-[#D37B24] flex items-center justify-center shrink-0">
-                <Mail size={18} />
+              <div className="w-11 h-11 rounded-xl bg-[#FAF6F0] text-[#D37B24] group-hover:bg-[#2B150D] group-hover:text-[#E69138] flex items-center justify-center shrink-0 transition-colors">
+                <Mail size={19} />
               </div>
-              <div>
-                <span className="text-[11px] text-[#623020] block">Email Us</span>
-                <strong className="text-[11px] font-bold text-[#2B150D] truncate block">info@aadhyainternational.com</strong>
+              <div className="min-w-0">
+                <span className="text-[11px] text-[#623020] block">Email Inquiries</span>
+                <strong className="text-[11px] font-bold text-[#2B150D] group-hover:text-[#D37B24] transition-colors truncate block">
+                  {siteData.brand.email}
+                </strong>
+                <span className="text-[10px] text-[#8C5E4A] block truncate">{siteData.brand.altEmail}</span>
               </div>
             </a>
 
@@ -354,18 +367,106 @@ export default function Enquiry() {
                 const elem = document.getElementById("enquiry-form-card");
                 if (elem) elem.scrollIntoView({ behavior: "smooth" });
               }}
-              className="flex items-center gap-3 p-3 rounded-xl bg-white border border-[#E3D1BC] hover:border-[#D37B24] transition-colors cursor-pointer"
+              className="flex items-center gap-3 p-4 rounded-2xl bg-white border border-[#E3D1BC] hover:border-[#D37B24] hover:shadow-md transition-all cursor-pointer group"
             >
-              <div className="w-10 h-10 rounded-xl bg-[#FAF6F0] text-[#D37B24] flex items-center justify-center shrink-0">
-                <Calendar size={18} />
+              <div className="w-11 h-11 rounded-xl bg-[#FAF6F0] text-[#D37B24] group-hover:bg-[#2B150D] group-hover:text-[#E69138] flex items-center justify-center shrink-0 transition-colors">
+                <Calendar size={19} />
               </div>
-              <div>
+              <div className="min-w-0">
                 <span className="text-[11px] text-[#623020] block">Book a Consultation</span>
-                <strong className="text-xs font-bold text-[#2B150D]">1-on-1 Discussion</strong>
+                <strong className="text-xs font-bold text-[#2B150D] group-hover:text-[#D37B24] transition-colors block">
+                  1-on-1 Discussion
+                </strong>
+                <span className="text-[10px] text-[#8C5E4A] block">Fill out form below</span>
               </div>
             </div>
 
           </div>
+
+          {/* OFFICIAL ADDRESS & SOCIAL CHANNELS STRIP */}
+          <div className="mt-6 pt-6 border-t border-[#E3D1BC]/70 grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+            
+            <div className="md:col-span-7 flex flex-col sm:flex-row sm:items-center gap-4 text-xs text-[#55271A]">
+              <div className="flex items-start gap-2 max-w-md">
+                <MapPin size={16} className="text-[#D37B24] shrink-0 mt-0.5" />
+                <div>
+                  <strong className="text-[#2B150D] block font-semibold">Registered Office & Academy:</strong>
+                  <span className="text-[#623020] leading-snug block">{siteData.brand.address}</span>
+                  <span className="text-[11px] text-[#8C5E4A] block mt-0.5">Training Hubs: {siteData.brand.trainingLocation}</span>
+                </div>
+              </div>
+              <div className="flex items-center gap-2 border-l sm:border-[#E3D1BC] sm:pl-4">
+                <Clock size={16} className="text-[#D37B24] shrink-0" />
+                <div>
+                  <strong className="text-[#2B150D] block font-semibold">Working Hours:</strong>
+                  <span className="text-[#623020]">{siteData.brand.workHours}</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="md:col-span-5 flex items-center justify-start md:justify-end gap-3">
+              <span className="text-xs font-bold text-[#2B150D] uppercase tracking-wider text-[11px]">
+                Follow Us:
+              </span>
+
+              {/* YouTube */}
+              <a
+                href={siteData.brand.socials.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-xl bg-white border border-[#E3D1BC] flex items-center justify-center text-[#55271A] hover:text-white hover:bg-[#FF0000] hover:border-[#FF0000] transition-all shadow-sm"
+                title="YouTube Channel (@chocolatepanning)"
+              >
+                <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+              </a>
+
+              {/* Instagram */}
+              <a
+                href={siteData.brand.socials.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-xl bg-white border border-[#E3D1BC] flex items-center justify-center text-[#55271A] hover:text-white hover:bg-gradient-to-tr hover:from-[#f09433] hover:via-[#dc2743] hover:to-[#bc1888] hover:border-transparent transition-all shadow-sm"
+                title="Instagram (@chocolatepanningacademy)"
+              >
+                <svg viewBox="0 0 24 24" className="w-4 h-4 fill-none stroke-current stroke-2">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                </svg>
+              </a>
+
+              {/* Facebook */}
+              <a
+                href={siteData.brand.socials.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-xl bg-white border border-[#E3D1BC] flex items-center justify-center text-[#55271A] hover:text-white hover:bg-[#1877F2] hover:border-[#1877F2] transition-all shadow-sm"
+                title="Facebook (/chocolatepanningacademy)"
+              >
+                <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+              </a>
+
+              {/* WhatsApp */}
+              <a
+                href={siteData.brand.whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-xl bg-white border border-[#E3D1BC] flex items-center justify-center text-[#55271A] hover:text-white hover:bg-[#25D366] hover:border-[#25D366] transition-all shadow-sm"
+                title="WhatsApp Direct Chat"
+              >
+                <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current">
+                  <path d="M12.031 2c-5.508 0-9.984 4.477-9.984 9.984 0 1.761.458 3.483 1.332 5.006L2 22l5.163-1.353a9.92 9.92 0 0 0 4.868 1.268h.004c5.508 0 9.985-4.477 9.985-9.984 0-2.668-1.04-5.176-2.928-7.064A9.927 9.927 0 0 0 12.031 2zm0 18.25c-1.503 0-2.977-.404-4.264-1.168l-.306-.182-3.167.83.845-3.088-.199-.317a8.21 8.21 0 0 1-1.26-4.341c0-4.549 3.702-8.25 8.251-8.25 2.204 0 4.275.859 5.834 2.418a8.204 8.204 0 0 1 2.417 5.834c0 4.55-3.702 8.252-8.151 8.252zm4.524-6.177c-.248-.124-1.467-.724-1.694-.807-.228-.083-.393-.124-.559.124-.165.248-.642.807-.787.973-.145.165-.29.186-.538.062-.248-.124-1.048-.386-1.996-1.232-.738-.658-1.236-1.472-1.381-1.72-.145-.248-.016-.382.108-.506.112-.111.248-.29.373-.435.124-.145.166-.248.249-.414.083-.166.041-.311-.021-.435-.062-.124-.559-1.347-.766-1.845-.201-.485-.406-.419-.558-.427-.145-.007-.311-.009-.477-.009s-.435.062-.663.311c-.228.249-.871.851-.871 2.075 0 1.224.892 2.407 1.016 2.573.125.166 1.756 2.682 4.254 3.761.595.257 1.06.41 1.423.525.598.19 1.142.163 1.572.099.48-.072 1.467-.6 1.674-1.18.207-.58.207-1.077.145-1.18-.062-.104-.228-.166-.476-.29z"/>
+                </svg>
+              </a>
+
+            </div>
+
+          </div>
+
         </div>
       </section>
 

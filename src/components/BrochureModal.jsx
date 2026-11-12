@@ -25,7 +25,7 @@ export default function BrochureModal({ isOpen, onClose, programName = "Chocolat
       // Trigger automatic simulated download of prospectus
       const element = document.createElement("a");
       const file = new Blob([
-        `AADHYA INTERNATIONAL - CHOCOLATE PANNING ACADEMY\n\nCurriculum & Prospectus for: ${programName}\n\nContents:\n1. Introduction to Dragée & Chocolate Panning\n2. Raw Material Priming & Temperature Curves\n3. Stainless Steel Drum Speeds & Blower Airflow Calibration\n4. Gum Arabic, Glaze & Shellac Mirror Polishing\n5. Quality Defects Troubleshooting & Recipe Scaling\n\nContact: info@aadhyainternational.com | +91 91 1234 5678\nMumbai, Maharashtra, India`
+        `AADHYA INTERNATIONAL - CHOCOLATE PANNING ACADEMY\n\nCurriculum & Prospectus for: ${programName}\n\nContents:\n1. Introduction to Dragée & Chocolate Panning\n2. Raw Material Priming & Temperature Curves\n3. Stainless Steel Drum Speeds & Blower Airflow Calibration\n4. Gum Arabic, Glaze & Shellac Mirror Polishing\n5. Quality Defects Troubleshooting & Recipe Scaling\n\nContact: aadhyainternational@gmail.com | +91 8600134951 | 9322876919\nAddress: 325, Keshri house, North Patel Nagar, Hesag, Hatia, Ranchi, Jharkhand - 834003\nTraining Hubs: Mumbai & Ranchi, India`
       ], { type: 'text/plain' });
       element.href = URL.createObjectURL(file);
       element.download = `${programName.replace(/\s+/g, '_')}_Prospectus.txt`;

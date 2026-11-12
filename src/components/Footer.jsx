@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin, Send, ArrowRight, ShieldCheck, Award, Heart } from "lucide-react";
+import { Phone, Mail, MapPin, Send, ArrowRight, ShieldCheck, Award, Heart, Clock } from "lucide-react";
 import confetti from "canvas-confetti";
+import { siteData } from "../data/siteData";
 
 export default function Footer({ onOpenEnquire }) {
   const [newsletterEmail, setNewsletterEmail] = useState("");
@@ -44,7 +45,7 @@ export default function Footer({ onOpenEnquire }) {
               Established in 2005, Aadhya International is India's dedicated centre of excellence for commercial chocolate panning training, technical consultancy, plant setup, and high-gloss panned confectionery development.
             </p>
 
-            <div className="flex items-center gap-4 pt-2">
+            <div className="flex items-center gap-4 pt-1">
               <div className="flex items-center gap-1.5 text-xs text-[#E69138] font-medium">
                 <ShieldCheck size={16} /> Certified Quality
               </div>
@@ -53,6 +54,73 @@ export default function Footer({ onOpenEnquire }) {
                 <Award size={16} /> 20+ Years Excellence
               </div>
             </div>
+
+            {/* OFFICIAL SOCIAL MEDIA CHANNELS */}
+            <div className="pt-2">
+              <span className="text-[11px] font-bold tracking-wider uppercase text-[#E69138] block mb-2">
+                Connect With Us:
+              </span>
+              <div className="flex items-center gap-2.5">
+                {/* YouTube */}
+                <a
+                  href={siteData.brand.socials.youtube}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-xl bg-[#261009] border border-[#3E1B10] flex items-center justify-center text-[#E3D1BC] hover:text-white hover:bg-[#FF0000] hover:border-[#FF0000] transition-all group shadow"
+                  title="Subscribe on YouTube (@chocolatepanning)"
+                  aria-label="YouTube Channel"
+                >
+                  <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current">
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                  </svg>
+                </a>
+
+                {/* Instagram */}
+                <a
+                  href={siteData.brand.socials.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-xl bg-[#261009] border border-[#3E1B10] flex items-center justify-center text-[#E3D1BC] hover:text-white hover:bg-gradient-to-tr hover:from-[#f09433] hover:via-[#dc2743] hover:to-[#bc1888] hover:border-transparent transition-all group shadow"
+                  title="Follow on Instagram (@chocolatepanningacademy)"
+                  aria-label="Instagram Profile"
+                >
+                  <svg viewBox="0 0 24 24" className="w-4 h-4 fill-none stroke-current stroke-2">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                  </svg>
+                </a>
+
+                {/* Facebook */}
+                <a
+                  href={siteData.brand.socials.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-xl bg-[#261009] border border-[#3E1B10] flex items-center justify-center text-[#E3D1BC] hover:text-white hover:bg-[#1877F2] hover:border-[#1877F2] transition-all group shadow"
+                  title="Follow on Facebook (/chocolatepanningacademy)"
+                  aria-label="Facebook Page"
+                >
+                  <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  </svg>
+                </a>
+
+                {/* WhatsApp */}
+                <a
+                  href={siteData.brand.whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-xl bg-[#261009] border border-[#3E1B10] flex items-center justify-center text-[#E3D1BC] hover:text-white hover:bg-[#25D366] hover:border-[#25D366] transition-all group shadow"
+                  title="Direct WhatsApp Chat (+91 8600134951)"
+                  aria-label="WhatsApp Contact"
+                >
+                  <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current">
+                    <path d="M12.031 2c-5.508 0-9.984 4.477-9.984 9.984 0 1.761.458 3.483 1.332 5.006L2 22l5.163-1.353a9.92 9.92 0 0 0 4.868 1.268h.004c5.508 0 9.985-4.477 9.985-9.984 0-2.668-1.04-5.176-2.928-7.064A9.927 9.927 0 0 0 12.031 2zm0 18.25c-1.503 0-2.977-.404-4.264-1.168l-.306-.182-3.167.83.845-3.088-.199-.317a8.21 8.21 0 0 1-1.26-4.341c0-4.549 3.702-8.25 8.251-8.25 2.204 0 4.275.859 5.834 2.418a8.204 8.204 0 0 1 2.417 5.834c0 4.55-3.702 8.252-8.151 8.252zm4.524-6.177c-.248-.124-1.467-.724-1.694-.807-.228-.083-.393-.124-.559.124-.165.248-.642.807-.787.973-.145.165-.29.186-.538.062-.248-.124-1.048-.386-1.996-1.232-.738-.658-1.236-1.472-1.381-1.72-.145-.248-.016-.382.108-.506.112-.111.248-.29.373-.435.124-.145.166-.248.249-.414.083-.166.041-.311-.021-.435-.062-.124-.559-1.347-.766-1.845-.201-.485-.406-.419-.558-.427-.145-.007-.311-.009-.477-.009s-.435.062-.663.311c-.228.249-.871.851-.871 2.075 0 1.224.892 2.407 1.016 2.573.125.166 1.756 2.682 4.254 3.761.595.257 1.06.41 1.423.525.598.19 1.142.163 1.572.099.48-.072 1.467-.6 1.674-1.18.207-.58.207-1.077.145-1.18-.062-.104-.228-.166-.476-.29z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
           </div>
 
           {/* NEWSLETTER */}
@@ -138,15 +206,35 @@ export default function Footer({ onOpenEnquire }) {
             <ul className="space-y-3 text-[#E3D1BC]/80">
               <li className="flex items-start gap-2">
                 <MapPin size={15} className="text-[#E69138] shrink-0 mt-0.5" />
-                <span>Aadhya Confectionery Center, Mumbai, Maharashtra, India</span>
+                <span className="leading-snug">
+                  {siteData.brand.address}
+                </span>
               </li>
               <li className="flex items-center gap-2">
-                <Phone size={15} className="text-[#E69138] shrink-0" />
-                <a href="tel:+919112345678" className="hover:text-[#E69138]">+91 91 1234 5678</a>
+                <Clock size={15} className="text-[#E69138] shrink-0" />
+                <span>{siteData.brand.workHours}</span>
               </li>
-              <li className="flex items-center gap-2">
-                <Mail size={15} className="text-[#E69138] shrink-0" />
-                <a href="mailto:info@aadhyainternational.com" className="hover:text-[#E69138]">info@aadhyainternational.com</a>
+              <li className="flex items-start gap-2">
+                <Phone size={15} className="text-[#E69138] shrink-0 mt-0.5" />
+                <div className="flex flex-col">
+                  <a href={`tel:${siteData.brand.phone.replace(/[^0-9+]/g, "")}`} className="hover:text-[#E69138]">
+                    {siteData.brand.phone}
+                  </a>
+                  <a href={`tel:${siteData.brand.altPhone.replace(/[^0-9+]/g, "")}`} className="hover:text-[#E69138] text-[11px] text-[#E3D1BC]/60">
+                    {siteData.brand.altPhone}
+                  </a>
+                </div>
+              </li>
+              <li className="flex items-start gap-2">
+                <Mail size={15} className="text-[#E69138] shrink-0 mt-0.5" />
+                <div className="flex flex-col">
+                  <a href={`mailto:${siteData.brand.email}`} className="hover:text-[#E69138] truncate block">
+                    {siteData.brand.email}
+                  </a>
+                  <a href={`mailto:${siteData.brand.altEmail}`} className="hover:text-[#E69138] text-[11px] text-[#E3D1BC]/60 truncate block">
+                    {siteData.brand.altEmail}
+                  </a>
+                </div>
               </li>
               <li className="pt-2">
                 <button

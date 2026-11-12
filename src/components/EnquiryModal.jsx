@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { X, Send, CheckCircle2, Sparkles, Phone, Mail, Building } from "lucide-react";
 import confetti from "canvas-confetti";
+import { siteData } from "../data/siteData";
 
 export default function EnquiryModal({ isOpen, onClose, initialInterest = "General Enquiry" }) {
   const [formData, setFormData] = useState({
@@ -189,12 +190,12 @@ export default function EnquiryModal({ isOpen, onClose, initialInterest = "Gener
             </div>
 
             <div className="pt-2 border-t border-[#E3D1BC] flex items-center justify-between text-[11px] text-[#623020]">
-              <span className="flex items-center gap-1">
-                <Phone size={11} className="text-[#D37B24]" /> +91 91 1234 5678
-              </span>
-              <span className="flex items-center gap-1">
-                <Mail size={11} className="text-[#D37B24]" /> info@aadhyainternational.com
-              </span>
+              <a href={`tel:${siteData.brand.phone.replace(/[^0-9+]/g, "")}`} className="flex items-center gap-1 hover:text-[#D37B24]">
+                <Phone size={11} className="text-[#D37B24]" /> {siteData.brand.phone}
+              </a>
+              <a href={`mailto:${siteData.brand.email}`} className="flex items-center gap-1 hover:text-[#D37B24]">
+                <Mail size={11} className="text-[#D37B24]" /> {siteData.brand.email}
+              </a>
             </div>
           </form>
         )}
