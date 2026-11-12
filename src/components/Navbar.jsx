@@ -130,20 +130,23 @@ export default function Navbar({ onOpenEnquire, onOpenWorkshop }) {
               onMouseEnter={() => setProgramsDropdown(true)}
               onMouseLeave={() => setProgramsDropdown(false)}
             >
-              <button 
+              <Link 
+                to="/programs"
+                onClick={() => setProgramsDropdown(false)}
                 className={`flex items-center gap-1 text-sm font-semibold py-1 transition-colors cursor-pointer ${
                   isActive("/programs") ? "text-[#2B150D] font-bold border-b-2 border-[#D37B24]" : "text-[#55271A] hover:text-[#D37B24]"
                 }`}
               >
                 <span>Training Programs</span>
                 <ChevronDown size={14} className={`transition-transform duration-200 ${programsDropdown ? "rotate-180 text-[#D37B24]" : ""}`} />
-              </button>
+              </Link>
 
               {programsDropdown && (
                 <div className="absolute top-full -left-4 w-72 bg-[#FCFAF6] border border-[#E3D1BC] rounded-xl shadow-xl py-2 z-50 animate-fade-in divide-y divide-[#E3D1BC]/40">
                   <div className="p-2 space-y-1">
                     <Link 
                       to="/programs" 
+                      onClick={() => setProgramsDropdown(false)}
                       className="block px-3 py-2 rounded-lg text-xs font-bold text-[#2B150D] hover:bg-[#F7F1E7] transition-colors"
                     >
                       <div className="flex items-center justify-between">
@@ -155,6 +158,7 @@ export default function Navbar({ onOpenEnquire, onOpenWorkshop }) {
 
                     <Link 
                       to="/programs/beginner" 
+                      onClick={() => setProgramsDropdown(false)}
                       className="block px-3 py-2 rounded-lg text-xs font-semibold text-[#2B150D] hover:bg-[#F7F1E7] transition-colors"
                     >
                       <div className="flex items-center justify-between">
@@ -166,6 +170,7 @@ export default function Navbar({ onOpenEnquire, onOpenWorkshop }) {
 
                     <Link 
                       to="/programs/product-wise" 
+                      onClick={() => setProgramsDropdown(false)}
                       className="block px-3 py-2 rounded-lg text-xs font-semibold text-[#2B150D] hover:bg-[#F7F1E7] transition-colors"
                     >
                       <div className="flex items-center justify-between">
@@ -177,6 +182,7 @@ export default function Navbar({ onOpenEnquire, onOpenWorkshop }) {
 
                     <Link 
                       to="/programs/advanced" 
+                      onClick={() => setProgramsDropdown(false)}
                       className="block px-3 py-2 rounded-lg text-xs font-semibold text-[#2B150D] hover:bg-[#F7F1E7] transition-colors"
                     >
                       <div className="flex items-center justify-between">
@@ -188,6 +194,7 @@ export default function Navbar({ onOpenEnquire, onOpenWorkshop }) {
 
                     <Link 
                       to="/programs/professional" 
+                      onClick={() => setProgramsDropdown(false)}
                       className="block px-3 py-2 rounded-lg text-xs font-semibold text-[#2B150D] hover:bg-[#F7F1E7] transition-colors"
                     >
                       <div className="flex items-center justify-between">
@@ -207,19 +214,22 @@ export default function Navbar({ onOpenEnquire, onOpenWorkshop }) {
               onMouseEnter={() => setConsultancyDropdown(true)}
               onMouseLeave={() => setConsultancyDropdown(false)}
             >
-              <button 
+              <Link 
+                to="/consultancy"
+                onClick={() => setConsultancyDropdown(false)}
                 className={`flex items-center gap-1 text-sm font-semibold py-1 transition-colors cursor-pointer ${
                   isActive("/consultancy") ? "text-[#2B150D] font-bold border-b-2 border-[#D37B24]" : "text-[#55271A] hover:text-[#D37B24]"
                 }`}
               >
                 <span>Consultancy</span>
                 <ChevronDown size={14} className={`transition-transform duration-200 ${consultancyDropdown ? "rotate-180 text-[#D37B24]" : ""}`} />
-              </button>
+              </Link>
 
               {consultancyDropdown && (
                 <div className="absolute top-full -left-4 w-64 bg-[#FCFAF6] border border-[#E3D1BC] rounded-xl shadow-xl p-2 z-50 animate-fade-in space-y-1">
                   <Link 
                     to="/consultancy" 
+                    onClick={() => setConsultancyDropdown(false)}
                     className="block px-3 py-2 rounded-lg text-xs font-bold text-[#2B150D] hover:bg-[#F7F1E7] transition-colors"
                   >
                     All Consultancy Services
@@ -227,6 +237,7 @@ export default function Navbar({ onOpenEnquire, onOpenWorkshop }) {
                   </Link>
                   <Link 
                     to="/consultancy#plant-setup" 
+                    onClick={() => setConsultancyDropdown(false)}
                     className="block px-3 py-2 rounded-lg text-xs font-semibold text-[#2B150D] hover:bg-[#F7F1E7] transition-colors"
                   >
                     Plant Setup & Machinery
@@ -234,6 +245,7 @@ export default function Navbar({ onOpenEnquire, onOpenWorkshop }) {
                   </Link>
                   <Link 
                     to="/consultancy#product-development" 
+                    onClick={() => setConsultancyDropdown(false)}
                     className="block px-3 py-2 rounded-lg text-xs font-semibold text-[#2B150D] hover:bg-[#F7F1E7] transition-colors"
                   >
                     Product & Recipe Development
@@ -258,43 +270,50 @@ export default function Navbar({ onOpenEnquire, onOpenWorkshop }) {
               onMouseEnter={() => setMoreDropdown(true)}
               onMouseLeave={() => setMoreDropdown(false)}
             >
-              <button 
+              <Link 
+                to="/more"
+                onClick={() => setMoreDropdown(false)}
                 className={`flex items-center gap-1 text-sm font-semibold py-1 transition-colors cursor-pointer ${
                   isActive("/more") ? "text-[#2B150D] font-bold border-b-2 border-[#D37B24]" : "text-[#55271A] hover:text-[#D37B24]"
                 }`}
               >
                 <span>More</span>
                 <ChevronDown size={14} className={`transition-transform duration-200 ${moreDropdown ? "rotate-180 text-[#D37B24]" : ""}`} />
-              </button>
+              </Link>
 
               {moreDropdown && (
                 <div className="absolute top-full -left-8 w-60 bg-[#FCFAF6] border border-[#E3D1BC] rounded-xl shadow-xl p-2 z-50 animate-fade-in space-y-1">
                   <Link 
                     to="/more" 
+                    onClick={() => setMoreDropdown(false)}
                     className="block px-3 py-2 rounded-lg text-xs font-bold text-[#2B150D] hover:bg-[#F7F1E7] transition-colors"
                   >
                     Resources & Events Hub
                   </Link>
                   <Link 
                     to="/more#events" 
+                    onClick={() => setMoreDropdown(false)}
                     className="block px-3 py-2 rounded-lg text-xs font-medium text-[#2B150D] hover:bg-[#F7F1E7] transition-colors"
                   >
                     Events & Workshops
                   </Link>
                   <Link 
                     to="/more#gallery" 
+                    onClick={() => setMoreDropdown(false)}
                     className="block px-3 py-2 rounded-lg text-xs font-medium text-[#2B150D] hover:bg-[#F7F1E7] transition-colors"
                   >
                     Academy Gallery
                   </Link>
                   <Link 
                     to="/more#faq" 
+                    onClick={() => setMoreDropdown(false)}
                     className="block px-3 py-2 rounded-lg text-xs font-medium text-[#2B150D] hover:bg-[#F7F1E7] transition-colors"
                   >
                     Frequently Asked Questions
                   </Link>
                   <Link 
                     to="/more#testimonials" 
+                    onClick={() => setMoreDropdown(false)}
                     className="block px-3 py-2 rounded-lg text-xs font-medium text-[#2B150D] hover:bg-[#F7F1E7] transition-colors"
                   >
                     Success Stories & Reviews
@@ -328,29 +347,38 @@ export default function Navbar({ onOpenEnquire, onOpenWorkshop }) {
         {/* MOBILE DRAWER */}
         {mobileMenuOpen && (
           <div className="lg:hidden bg-[#FCFAF6] border-t border-[#E3D1BC] px-5 py-4 space-y-3 animate-fade-in shadow-xl">
-            <Link to="/" className="block py-2 text-sm font-semibold text-[#2B150D]">Home</Link>
-            <Link to="/about" className="block py-2 text-sm font-semibold text-[#2B150D]">About Us</Link>
+            <Link to="/" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-sm font-semibold text-[#2B150D]">Home</Link>
+            <Link to="/about" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-sm font-semibold text-[#2B150D]">About Us</Link>
             
             <div className="py-2 border-y border-[#E3D1BC]/60 space-y-2">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#B86216]">Training Programs</span>
+              <Link 
+                to="/programs" 
+                onClick={() => setMobileMenuOpen(false)} 
+                className="text-xs font-bold uppercase tracking-wider text-[#B86216] block hover:underline"
+              >
+                Training Programs →
+              </Link>
               <div className="pl-3 space-y-1.5 text-xs text-[#55271A]">
-                <Link to="/programs" className="block py-1 hover:text-[#D37B24]">All Programs Overview</Link>
-                <Link to="/programs/beginner" className="block py-1 hover:text-[#D37B24]">Beginner Training (2 Days)</Link>
-                <Link to="/programs/product-wise" className="block py-1 hover:text-[#D37B24]">Product-Wise Training (1 Day)</Link>
-                <Link to="/programs/advanced" className="block py-1 hover:text-[#D37B24]">Advanced Training (3 Days)</Link>
-                <Link to="/programs/professional" className="block py-1 hover:text-[#D37B24]">Professional Masterclass (5 Days)</Link>
+                <Link to="/programs" onClick={() => setMobileMenuOpen(false)} className="block py-1 hover:text-[#D37B24]">All Programs Overview</Link>
+                <Link to="/programs/beginner" onClick={() => setMobileMenuOpen(false)} className="block py-1 hover:text-[#D37B24]">Beginner Training (2 Days)</Link>
+                <Link to="/programs/product-wise" onClick={() => setMobileMenuOpen(false)} className="block py-1 hover:text-[#D37B24]">Product-Wise Training (1 Day)</Link>
+                <Link to="/programs/advanced" onClick={() => setMobileMenuOpen(false)} className="block py-1 hover:text-[#D37B24]">Advanced Training (3 Days)</Link>
+                <Link to="/programs/professional" onClick={() => setMobileMenuOpen(false)} className="block py-1 hover:text-[#D37B24]">Professional Masterclass (5 Days)</Link>
               </div>
             </div>
 
-            <Link to="/consultancy" className="block py-2 text-sm font-semibold text-[#2B150D]">Consultancy Services</Link>
-            <Link to="/products" className="block py-2 text-sm font-semibold text-[#2B150D]">Products & Solutions</Link>
-            <Link to="/more" className="block py-2 text-sm font-semibold text-[#2B150D]">Resources & Events</Link>
-            <Link to="/enquiry" className="block py-2 text-sm font-semibold text-[#2B150D]">Contact & Enquiry</Link>
+            <Link to="/consultancy" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-sm font-semibold text-[#2B150D]">Consultancy Services</Link>
+            <Link to="/products" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-sm font-semibold text-[#2B150D]">Products & Solutions</Link>
+            <Link to="/more" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-sm font-semibold text-[#2B150D]">Resources & Events</Link>
+            <Link to="/enquiry" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-sm font-semibold text-[#2B150D]">Contact & Enquiry</Link>
 
             <div className="pt-2">
               <button
-                onClick={() => onOpenEnquire("Mobile Menu Enquiry")}
-                className="w-full bg-[#2B150D] text-[#FCFAF6] py-3 rounded-xl font-semibold text-xs flex items-center justify-center gap-2"
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onOpenEnquire("Mobile Menu Enquiry");
+                }}
+                className="w-full bg-[#2B150D] text-[#FCFAF6] py-3 rounded-xl font-semibold text-xs flex items-center justify-center gap-2 cursor-pointer"
               >
                 <span>Enquire Now</span>
                 <Send size={13} className="text-[#E69138]" />
