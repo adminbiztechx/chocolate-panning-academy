@@ -16,7 +16,8 @@ import {
   PhoneCall,
   Search,
   Check,
-  Compass
+  Compass,
+  Handshake
 } from "lucide-react";
 import { siteData } from "../data/siteData";
 
@@ -222,70 +223,113 @@ export default function Consultancy({ onOpenEnquire, onOpenBrochure }) {
         </div>
       </section>
 
-      {/* 4. WHY CHOOSE OUR CONSULTANCY? (Dark Cocoa Section) */}
-      <section className="bg-[#2B150D] text-white py-14">
+      {/* 4. WHY CHOOSE OUR CONSULTANCY? - EXACT 1:1 CLONE OF USER UPLOAD */}
+      <section className="py-6 sm:py-10 bg-[#FAF6F0]">
         <div className="w-full px-4 sm:px-8 md:px-12 lg:px-[5.5%]">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            
-            <div className="lg:col-span-3">
-              <h3 className="font-serif text-2xl font-bold text-white">
-                Why Choose Our <br /> Consultancy?
+          
+          {/* Desktop & Tablet (>= 768px): Exact Master 2x Graphic Banner */}
+          <div className="hidden md:block w-full max-w-[1240px] mx-auto rounded-3xl overflow-hidden shadow-lg select-none">
+            <picture>
+              <source srcSet="/images/consultancy-why-choose-banner-2x.png" media="(min-width: 768px)" />
+              <img
+                src="/images/consultancy-why-choose-banner.png"
+                alt="Why Choose Our Consultancy? - 20+ Years Industry Expertise, Hands-on & Practical Approach, End-to-End Support, Proven Results, Customized Solutions"
+                className="w-full h-auto object-contain block"
+              />
+            </picture>
+          </div>
+
+          {/* Mobile View (< 768px): Dedicated Dark Chocolate Card with Crisp Typography */}
+          <div className="md:hidden w-full bg-[#421D12] text-white rounded-3xl p-5 border border-[#5A291A] shadow-md space-y-4">
+            <div className="text-center pb-2 border-b border-[#5A291A]">
+              <h3 className="font-serif text-xl font-bold text-white">
+                Why Choose Our Consultancy?
               </h3>
             </div>
 
-            <div className="lg:col-span-9 grid grid-cols-2 sm:grid-cols-5 gap-4 divide-y sm:divide-y-0 sm:divide-x divide-[#4B2418] text-center">
-              <div className="pt-2 sm:pt-0">
-                <Award size={18} className="text-[#E69138] mx-auto mb-1" />
-                <span className="text-xs font-bold text-white block">20+ Years</span>
-                <span className="text-[11px] text-[#E3D1BC]/80">Industry Expertise</span>
+            <div className="grid grid-cols-2 gap-2.5 text-center">
+              <div className="bg-[#31140B] p-3 rounded-2xl border border-[#4B1E12] flex flex-col items-center">
+                <Award size={18} className="text-[#E69138] mb-1" />
+                <span className="text-sm font-serif font-bold text-white">20+ Years</span>
+                <span className="text-[10px] text-[#E3D1BC]">Industry Expertise</span>
               </div>
-              <div className="pt-2 sm:pt-0">
-                <Users size={18} className="text-[#E69138] mx-auto mb-1" />
-                <span className="text-xs font-bold text-white block">Hands-on &</span>
-                <span className="text-[11px] text-[#E3D1BC]/80">Practical Approach</span>
+
+              <div className="bg-[#31140B] p-3 rounded-2xl border border-[#4B1E12] flex flex-col items-center">
+                <Users size={18} className="text-[#E69138] mb-1" />
+                <span className="text-sm font-serif font-bold text-white">Hands-on</span>
+                <span className="text-[10px] text-[#E3D1BC]">& Practical Approach</span>
               </div>
-              <div className="pt-2 sm:pt-0">
-                <Factory size={18} className="text-[#E69138] mx-auto mb-1" />
-                <span className="text-xs font-bold text-white block">End-to-End</span>
-                <span className="text-[11px] text-[#E3D1BC]/80">Support</span>
+
+              <div className="bg-[#31140B] p-3 rounded-2xl border border-[#4B1E12] flex flex-col items-center">
+                <Factory size={18} className="text-[#E69138] mb-1" />
+                <span className="text-sm font-serif font-bold text-white">End-to-End</span>
+                <span className="text-[10px] text-[#E3D1BC]">Support</span>
               </div>
-              <div className="pt-2 sm:pt-0">
-                <TrendingUp size={18} className="text-[#E69138] mx-auto mb-1" />
-                <span className="text-xs font-bold text-white block">Proven</span>
-                <span className="text-[11px] text-[#E3D1BC]/80">Results</span>
+
+              <div className="bg-[#31140B] p-3 rounded-2xl border border-[#4B1E12] flex flex-col items-center">
+                <TrendingUp size={18} className="text-[#E69138] mb-1" />
+                <span className="text-sm font-serif font-bold text-white">Proven</span>
+                <span className="text-[10px] text-[#E3D1BC]">Results</span>
               </div>
-              <div className="pt-2 sm:pt-0">
-                <ShieldCheck size={18} className="text-[#E69138] mx-auto mb-1" />
-                <span className="text-xs font-bold text-white block">Customized</span>
-                <span className="text-[11px] text-[#E3D1BC]/80">Solutions</span>
+
+              <div className="col-span-2 bg-[#31140B] p-3 rounded-2xl border border-[#4B1E12] flex flex-col items-center">
+                <Handshake size={18} className="text-[#E69138] mb-1" />
+                <span className="text-sm font-serif font-bold text-white">Customized Solutions</span>
+                <span className="text-[10px] text-[#E3D1BC]">Tailored to Your Operations</span>
               </div>
             </div>
-
           </div>
+
         </div>
       </section>
 
-      {/* 5. OUR CONSULTANCY PROCESS */}
-      <section className="py-16 w-full px-4 sm:px-8 md:px-12 lg:px-[5.5%]">
-        <div className="text-center mb-12">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#B86216]">
-            OUR PROCESS
-          </span>
-          <h2 className="font-serif text-2xl sm:text-4xl font-bold text-[#2B150D] mt-1">
-            Our Consultancy Process
-          </h2>
-        </div>
+      {/* 5. OUR CONSULTANCY PROCESS - EXACT 1:1 CLONE OF USER UPLOAD */}
+      <section className="py-10 sm:py-16 w-full px-4 sm:px-8 md:px-12 lg:px-[5.5%] bg-[#FAF6F0]">
+        <div className="w-full max-w-[1240px] mx-auto">
+          
+          {/* Desktop & Tablet (>= 768px): Exact Master 2x Graphic Process Banner */}
+          <div className="hidden md:block w-full select-none">
+            <picture>
+              <source srcSet="/images/consultancy-process-banner-2x.png" media="(min-width: 768px)" />
+              <img
+                src="/images/consultancy-process-banner.png"
+                alt="Our Consultancy Process: 1 Understand, 2 Analyze, 3 Plan, 4 Implement, 5 Grow"
+                className="w-full h-auto object-contain block mx-auto"
+              />
+            </picture>
+          </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 relative">
-          {processSteps.map((s, idx) => (
-            <div key={s.step} className="bg-[#FCFAF6] rounded-2xl p-5 border border-[#E3D1BC] flex flex-col items-center text-center space-y-2 group hover:border-[#D37B24] transition-colors">
-              <div className="w-12 h-12 rounded-full bg-[#FAF6F0] border-2 border-[#D37B24] text-[#D37B24] font-serif font-black text-sm flex items-center justify-center shadow">
-                {s.step}
-              </div>
-              <h5 className="font-serif text-sm font-bold text-[#2B150D]">{s.name}</h5>
-              <p className="text-[11px] text-[#623020] leading-relaxed">{s.desc}</p>
+          {/* Mobile Layout (< 768px): Centered Header + Connected Vertical Stepper */}
+          <div className="md:hidden space-y-6">
+            <div className="flex items-center justify-center gap-3 text-center">
+              <div className="w-8 h-0.5 bg-[#D37B24] rounded-full"></div>
+              <h2 className="font-serif text-2xl font-bold text-[#200D07]">
+                Our Consultancy Process
+              </h2>
+              <div className="w-8 h-0.5 bg-[#D37B24] rounded-full"></div>
             </div>
-          ))}
+
+            <div className="relative pl-6 space-y-5 before:content-[''] before:absolute before:left-[19px] before:top-4 before:bottom-4 before:w-0.5 before:border-l-2 before:border-dotted before:border-[#CBB49E]">
+              {processSteps.map((s) => (
+                <div key={s.step} className="relative flex items-start gap-4">
+                  <div className="w-10 h-10 shrink-0 rounded-full bg-[#FAF0E6] border border-[#E4D2C1] flex items-center justify-center text-[#8C3E1B] font-bold text-xs shadow-sm relative z-10">
+                    <span className="w-6 h-6 rounded-full bg-[#3D1A10] text-white flex items-center justify-center text-[11px]">
+                      {s.step}
+                    </span>
+                  </div>
+                  <div className="pt-0.5 space-y-0.5">
+                    <h5 className="font-serif text-base font-bold text-[#200D07]">
+                      {s.name}
+                    </h5>
+                    <p className="text-xs text-[#522919] leading-relaxed">
+                      {s.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
       </section>
 
