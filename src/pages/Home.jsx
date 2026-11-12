@@ -70,46 +70,46 @@ export default function Home({ onOpenEnquire, onOpenWorkshop }) {
 
       {/* 2. STATS BAR / TRUST BAR - PERFECTLY ALIGNED AT 5.5% GUTTER */}
       <section className="w-full bg-[#FAF6F0] border-b border-[#E3D1BC]">
-        <div className="w-full px-4 sm:px-8 md:px-12 lg:px-[5.5%] py-7">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 divide-y md:divide-y-0 md:divide-x divide-[#E3D1BC]">
+        <div className="w-full px-4 sm:px-8 md:px-12 lg:px-[5.5%] py-6 sm:py-7">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 divide-y-0 md:divide-x divide-[#E3D1BC]">
             
-            <div className="flex items-center gap-4 pt-2 md:pt-0">
-              <div className="w-12 h-12 rounded-2xl bg-[#F7F1E7] border border-[#E3D1BC] flex items-center justify-center text-[#B86216] shrink-0 shadow-sm">
-                <Calendar size={22} />
+            <div className="flex items-center gap-3 sm:gap-4 p-1.5 sm:p-0">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-[#F7F1E7] border border-[#E3D1BC] flex items-center justify-center text-[#B86216] shrink-0 shadow-sm">
+                <Calendar size={20} className="sm:w-[22px] sm:h-[22px]" />
               </div>
               <div>
-                <div className="font-serif font-bold text-lg sm:text-xl text-[#2B150D]">Since 2005</div>
-                <div className="text-xs text-[#623020]">Industry Experience</div>
+                <div className="font-serif font-bold text-base sm:text-xl text-[#2B150D] whitespace-nowrap">Since 2005</div>
+                <div className="text-[11px] sm:text-xs text-[#623020]">Industry Experience</div>
               </div>
             </div>
 
-            <div className="flex items-center gap-4 pl-0 md:pl-8 pt-2 md:pt-0">
-              <div className="w-12 h-12 rounded-2xl bg-[#F7F1E7] border border-[#E3D1BC] flex items-center justify-center text-[#B86216] shrink-0 shadow-sm">
-                <Users size={22} />
+            <div className="flex items-center gap-3 sm:gap-4 pl-0 md:pl-8 p-1.5 sm:p-0">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-[#F7F1E7] border border-[#E3D1BC] flex items-center justify-center text-[#B86216] shrink-0 shadow-sm">
+                <Users size={20} className="sm:w-[22px] sm:h-[22px]" />
               </div>
               <div>
-                <div className="font-serif font-bold text-lg sm:text-xl text-[#2B150D]">1000+</div>
-                <div className="text-xs text-[#623020]">Professionals Trained</div>
+                <div className="font-serif font-bold text-base sm:text-xl text-[#2B150D] whitespace-nowrap">1000+</div>
+                <div className="text-[11px] sm:text-xs text-[#623020]">Professionals Trained</div>
               </div>
             </div>
 
-            <div className="flex items-center gap-4 pl-0 md:pl-8 pt-2 md:pt-0">
-              <div className="w-12 h-12 rounded-2xl bg-[#F7F1E7] border border-[#E3D1BC] flex items-center justify-center text-[#B86216] shrink-0 shadow-sm">
-                <Award size={22} />
+            <div className="flex items-center gap-3 sm:gap-4 pl-0 md:pl-8 p-1.5 sm:p-0">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-[#F7F1E7] border border-[#E3D1BC] flex items-center justify-center text-[#B86216] shrink-0 shadow-sm">
+                <Award size={20} className="sm:w-[22px] sm:h-[22px]" />
               </div>
               <div>
-                <div className="font-serif font-bold text-lg sm:text-xl text-[#2B150D]">Expert-Led</div>
-                <div className="text-xs text-[#623020]">Practical Training</div>
+                <div className="font-serif font-bold text-base sm:text-xl text-[#2B150D] whitespace-nowrap">Expert-Led</div>
+                <div className="text-[11px] sm:text-xs text-[#623020]">Practical Training</div>
               </div>
             </div>
 
-            <div className="flex items-center gap-4 pl-0 md:pl-8 pt-2 md:pt-0">
-              <div className="w-12 h-12 rounded-2xl bg-[#F7F1E7] border border-[#E3D1BC] flex items-center justify-center text-[#B86216] shrink-0 shadow-sm">
-                <TrendingUp size={22} />
+            <div className="flex items-center gap-3 sm:gap-4 pl-0 md:pl-8 p-1.5 sm:p-0">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-[#F7F1E7] border border-[#E3D1BC] flex items-center justify-center text-[#B86216] shrink-0 shadow-sm">
+                <TrendingUp size={20} className="sm:w-[22px] sm:h-[22px]" />
               </div>
               <div>
-                <div className="font-serif font-bold text-lg sm:text-xl text-[#2B150D]">End-to-End</div>
-                <div className="text-xs text-[#623020]">Business Support</div>
+                <div className="font-serif font-bold text-base sm:text-xl text-[#2B150D] whitespace-nowrap">End-to-End</div>
+                <div className="text-[11px] sm:text-xs text-[#623020]">Business Support</div>
               </div>
             </div>
 
@@ -240,23 +240,66 @@ export default function Home({ onOpenEnquire, onOpenWorkshop }) {
 
       {/* 5. WHY CHOOSE US (Full-width Dark Cocoa Banner with Organic Wave & Exact Texture) */}
       <section className="w-full relative overflow-hidden py-4 sm:py-6 bg-[#FAF6F0]">
-        <div className="w-full relative select-none">
+        {/* Desktop & Tablet: Exact master 2x graphic banner */}
+        <div className="hidden sm:block w-full relative select-none">
           <picture>
             <source srcSet="/images/why-choose-us-banner-2x.png" media="(min-width: 640px)" />
             <img
               src="/images/why-choose-us-banner.png"
-              alt="Why Choose Us - Learn from Industry Experts (20+ Years of Expertise, Hands-on Practical Training, Real Production Exposure, Personalised Guidance, Certificate of Completion)"
+              alt="Why Choose Us - Learn from Industry Experts"
               className="w-full h-auto object-contain block drop-shadow-sm"
               loading="lazy"
             />
           </picture>
         </div>
+
+        {/* Mobile View: High-contrast Dark Cocoa Card with Legible Icons & Typography */}
+        <div className="sm:hidden w-full px-4">
+          <div className="bg-[#2B150D] text-[#FCFAF6] rounded-3xl p-6 border border-[#4B2418] shadow-lg space-y-5">
+            <div className="text-center space-y-1">
+              <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#E69138]">
+                WHY CHOOSE US
+              </span>
+              <h3 className="font-serif text-2xl font-bold text-white">
+                Learn from Industry Experts
+              </h3>
+            </div>
+
+            <div className="grid grid-cols-2 gap-3 text-center">
+              <div className="bg-[#3D1D12] p-3 rounded-2xl border border-[#55271A] flex flex-col items-center">
+                <Award size={20} className="text-[#E69138] mb-1.5" />
+                <span className="text-xs font-bold text-white">20+ Years</span>
+                <span className="text-[10px] text-[#E3D1BC]">of Expertise</span>
+              </div>
+              <div className="bg-[#3D1D12] p-3 rounded-2xl border border-[#55271A] flex flex-col items-center">
+                <FlaskConical size={20} className="text-[#E69138] mb-1.5" />
+                <span className="text-xs font-bold text-white">Hands-on</span>
+                <span className="text-[10px] text-[#E3D1BC]">Practical Training</span>
+              </div>
+              <div className="bg-[#3D1D12] p-3 rounded-2xl border border-[#55271A] flex flex-col items-center">
+                <Factory size={20} className="text-[#E69138] mb-1.5" />
+                <span className="text-xs font-bold text-white">Real Production</span>
+                <span className="text-[10px] text-[#E3D1BC]">Exposure</span>
+              </div>
+              <div className="bg-[#3D1D12] p-3 rounded-2xl border border-[#55271A] flex flex-col items-center">
+                <Users size={20} className="text-[#E69138] mb-1.5" />
+                <span className="text-xs font-bold text-white">Personalised</span>
+                <span className="text-[10px] text-[#E3D1BC]">Guidance</span>
+              </div>
+              <div className="col-span-2 bg-[#3D1D12] p-3 rounded-2xl border border-[#55271A] flex flex-col items-center max-w-[200px] mx-auto w-full">
+                <FileCheck size={20} className="text-[#E69138] mb-1.5" />
+                <span className="text-xs font-bold text-white">Certificate</span>
+                <span className="text-[10px] text-[#E3D1BC]">of Completion</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* 6. THE PROCESS (5-Step Panning Pipeline - Exact 1:1 Match) */}
-      <section className="w-full py-14 sm:py-20 bg-[#FAF6F0]">
+      <section className="w-full py-12 sm:py-20 bg-[#FAF6F0]">
         <div className="w-full px-4 sm:px-8 md:px-12 lg:px-[5.5%]">
-          <div className="text-center mb-10 sm:mb-12">
+          <div className="text-center mb-8 sm:mb-12">
             <span className="text-[11px] sm:text-[12px] font-bold uppercase tracking-[0.25em] text-[#984A1A]">
               THE PROCESS
             </span>
@@ -278,7 +321,7 @@ export default function Home({ onOpenEnquire, onOpenWorkshop }) {
           </div>
 
           {/* Mobile Stacking View (< 640px) */}
-          <div className="sm:hidden grid grid-cols-2 gap-4">
+          <div className="sm:hidden grid grid-cols-2 gap-3.5">
             {[
               { num: 1, name: "Preparation", img: "/images/process-oval-1-2x.png" },
               { num: 2, name: "Coating", img: "/images/process-oval-2-2x.png" },
@@ -286,13 +329,18 @@ export default function Home({ onOpenEnquire, onOpenWorkshop }) {
               { num: 4, name: "Polishing", img: "/images/process-oval-4-2x.png" },
               { num: 5, name: "Finished Product", img: "/images/process-oval-5-2x.png" },
             ].map((st) => (
-              <div key={st.num} className="bg-white/60 p-3 rounded-2xl border border-[#E8DACB] flex flex-col items-center text-center">
+              <div 
+                key={st.num} 
+                className={`bg-white/70 p-3.5 rounded-2xl border border-[#E8DACB] flex flex-col items-center text-center shadow-sm ${
+                  st.num === 5 ? "col-span-2 max-w-[200px] mx-auto w-full" : ""
+                }`}
+              >
                 <img src={st.img} alt={st.name} className="w-20 h-auto object-contain mb-2" />
                 <div className="flex items-center gap-1.5">
-                  <span className="w-5 h-5 rounded-full bg-[#2B150D] text-white text-[11px] font-bold flex items-center justify-center">
+                  <span className="w-5 h-5 rounded-full bg-[#2B150D] text-white text-[11px] font-bold flex items-center justify-center shrink-0">
                     {st.num}
                   </span>
-                  <span className="text-xs font-bold text-[#200D07]">{st.name}</span>
+                  <span className="text-xs font-bold text-[#200D07] whitespace-nowrap">{st.name}</span>
                 </div>
               </div>
             ))}

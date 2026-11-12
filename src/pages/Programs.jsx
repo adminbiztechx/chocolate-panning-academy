@@ -164,30 +164,30 @@ export default function Programs({ onOpenEnquire, onOpenBrochure }) {
       {/* 2. FEATURE STRIP (5 items) */}
       <section className="bg-[#FAF6F0] border-b border-[#E3D1BC] py-5">
         <div className="w-full px-4 sm:px-8 md:px-12 lg:px-[5.5%]">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 divide-y md:divide-y-0 md:divide-x divide-[#E3D1BC] text-center">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3.5 sm:gap-4 divide-y-0 md:divide-x divide-[#E3D1BC] text-center items-center">
             
-            <div className="flex items-center justify-center gap-2.5 pt-2 md:pt-0">
-              <Award size={18} className="text-[#B86216]" />
+            <div className="flex items-center justify-center gap-2 p-1.5 sm:p-0">
+              <Award size={18} className="text-[#B86216] shrink-0" />
               <div className="text-xs font-bold text-[#2B150D]">Hands-on Practical Training</div>
             </div>
 
-            <div className="flex items-center justify-center gap-2.5 pt-2 md:pt-0 pl-0 md:pl-2">
-              <FlaskConical size={18} className="text-[#B86216]" />
+            <div className="flex items-center justify-center gap-2 p-1.5 sm:p-0 pl-0 md:pl-2">
+              <FlaskConical size={18} className="text-[#B86216] shrink-0" />
               <div className="text-xs font-bold text-[#2B150D]">Industry Proven Techniques</div>
             </div>
 
-            <div className="flex items-center justify-center gap-2.5 pt-2 md:pt-0 pl-0 md:pl-2">
-              <Users size={18} className="text-[#B86216]" />
-              <div className="text-xs font-bold text-[#2B150D]">Expert Trainers (20+ Years Exp.)</div>
+            <div className="flex items-center justify-center gap-2 p-1.5 sm:p-0 pl-0 md:pl-2">
+              <Users size={18} className="text-[#B86216] shrink-0" />
+              <div className="text-xs font-bold text-[#2B150D]">Expert Trainers (20+ Yrs)</div>
             </div>
 
-            <div className="flex items-center justify-center gap-2.5 pt-2 md:pt-0 pl-0 md:pl-2">
-              <FileCheck size={18} className="text-[#B86216]" />
+            <div className="flex items-center justify-center gap-2 p-1.5 sm:p-0 pl-0 md:pl-2">
+              <FileCheck size={18} className="text-[#B86216] shrink-0" />
               <div className="text-xs font-bold text-[#2B150D]">Certificate of Completion</div>
             </div>
 
-            <div className="flex items-center justify-center gap-2.5 pt-2 md:pt-0 pl-0 md:pl-2">
-              <TrendingUp size={18} className="text-[#B86216]" />
+            <div className="col-span-2 sm:col-span-1 flex items-center justify-center gap-2 p-1.5 sm:p-0 pl-0 md:pl-2 max-w-[240px] sm:max-w-none mx-auto w-full">
+              <TrendingUp size={18} className="text-[#B86216] shrink-0" />
               <div className="text-xs font-bold text-[#2B150D]">Business Guidance & Support</div>
             </div>
 
@@ -196,7 +196,7 @@ export default function Programs({ onOpenEnquire, onOpenBrochure }) {
       </section>
 
       {/* 3. CHOOSE THE RIGHT TRAINING PROGRAM & FILTER TABS */}
-      <section className="py-14 w-full px-4 sm:px-8 md:px-12 lg:px-[5.5%]">
+      <section className="py-12 sm:py-16 w-full px-4 sm:px-8 md:px-12 lg:px-[5.5%]">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
           <div>
             <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#2B150D]">
@@ -208,15 +208,15 @@ export default function Programs({ onOpenEnquire, onOpenBrochure }) {
           </p>
         </div>
 
-        {/* Filter Pills */}
-        <div className="flex flex-wrap items-center gap-2 mb-8 border-b border-[#E3D1BC] pb-4">
+        {/* Filter Pills: Smooth horizontal swipe on mobile */}
+        <div className="flex items-center gap-2 mb-8 border-b border-[#E3D1BC] pb-4 overflow-x-auto no-scrollbar py-1">
           {filterTabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveFilter(tab.id)}
-              className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
+              className={`px-4 py-2 rounded-full text-xs font-semibold transition-all cursor-pointer whitespace-nowrap shrink-0 ${
                 activeFilter === tab.id
-                  ? "bg-[#2B150D] text-white shadow"
+                  ? "bg-[#2B150D] text-white shadow-md scale-105"
                   : "bg-[#F7F1E7] text-[#623020] hover:bg-[#EFE3D3]"
               }`}
             >

@@ -67,7 +67,7 @@ export default function Consultancy({ onOpenEnquire, onOpenBrochure }) {
       {/* 2. FEATURE STRIP (6 items) */}
       <section className="bg-[#FAF6F0] border-b border-[#E3D1BC] py-4">
         <div className="w-full px-4 sm:px-8 md:px-12 lg:px-[5.5%]">
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 divide-y sm:divide-y-0 sm:divide-x divide-[#E3D1BC] text-center">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3.5 sm:gap-3 divide-y-0 sm:divide-x divide-[#E3D1BC] text-center">
             
             <div className="pt-2 sm:pt-0">
               <Factory size={16} className="text-[#B86216] mx-auto mb-1" />

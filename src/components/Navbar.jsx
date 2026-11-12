@@ -48,27 +48,29 @@ export default function Navbar({ onOpenEnquire, onOpenWorkshop }) {
   return (
     <header className="w-full sticky top-0 z-40 transition-all duration-300">
       {/* 1. TOP ANNOUNCEMENT BAR */}
-      <div className="w-full bg-[#180905] text-[#E3D1BC] text-[12px] py-2 px-4 sm:px-8 md:px-12 lg:px-[5.5%] border-b border-[#381B12]/60">
-        <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-1.5 font-medium">
-          <div className="flex items-center gap-2 tracking-wide">
-            <span className="text-[#FCFAF6] font-semibold">Aadhya International</span>
+      <div className="w-full bg-[#180905] text-[#E3D1BC] py-2 px-3 sm:px-8 md:px-12 lg:px-[5.5%] border-b border-[#381B12]/60 select-none">
+        <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-1 sm:gap-2 text-[11px] sm:text-xs">
+          
+          <div className="flex items-center justify-center sm:justify-start gap-1.5 tracking-wide text-center">
+            <span className="text-[#FCFAF6] font-semibold whitespace-nowrap">Aadhya International</span>
             <span className="text-[#B86216]">|</span>
-            <span className="text-[#E3D1BC]/90">Chocolate Panning Academy</span>
+            <span className="text-[#E3D1BC]/90 whitespace-nowrap">Chocolate Panning Academy</span>
           </div>
 
-          <div className="flex items-center gap-3">
-            <div className="flex items-center gap-1.5 text-xs text-[#FCFAF6]">
-              <Calendar size={13} className="text-[#E69138]" />
-              <span>Upcoming Workshop: <strong className="font-semibold text-white">15–17 Mar 2025</strong>, Mumbai</span>
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-x-2 gap-y-0.5 text-[#FCFAF6] text-center">
+            <div className="flex items-center gap-1.5">
+              <Calendar size={12} className="text-[#E69138] shrink-0" />
+              <span>Upcoming Workshop: <strong className="font-semibold text-white whitespace-nowrap">15–17 Mar 2025</strong>, Mumbai</span>
             </div>
             <button 
               onClick={onOpenWorkshop}
-              className="text-[#E69138] hover:text-[#f3b573] font-semibold flex items-center gap-1 transition-colors group cursor-pointer text-xs"
+              className="text-[#E69138] hover:text-[#f3b573] font-bold inline-flex items-center gap-1 transition-colors group cursor-pointer whitespace-nowrap underline sm:no-underline"
             >
               <span>Register Now</span>
               <span className="group-hover:translate-x-0.5 transition-transform">→</span>
             </button>
           </div>
+
         </div>
       </div>
 

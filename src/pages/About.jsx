@@ -183,7 +183,7 @@ export default function About({ onOpenEnquire }) {
               </h3>
             </div>
 
-            <div className="lg:col-span-9 grid grid-cols-2 sm:grid-cols-4 gap-6 divide-y sm:divide-y-0 sm:divide-x divide-[#4B2418]">
+            <div className="lg:col-span-9 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 divide-y-0 sm:divide-x divide-[#4B2418]">
               
               <div className="text-center pt-2 sm:pt-0">
                 <Calendar size={20} className="text-[#E69138] mx-auto mb-1" />
